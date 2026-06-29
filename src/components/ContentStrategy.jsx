@@ -5,68 +5,123 @@ import { ExternalLink, ChevronDown } from 'lucide-react';
 export default function ContentStrategy() {
   const [expandedCard, setExpandedCard] = useState(null);
 
+  // Ordered most-recent-first so the page reads as current and senior.
+  // NOTE: add logo files at the icon paths below (see /public/images/logos/).
+  // For YEX and tomintech you'll need to drop in yex.png and tomintech.svg.
   const companies = [
+    {
+      id: 'yex',
+      name: 'YEX Exchange',
+      role: 'SEO Manager',
+      period: 'Nov 2025 - Present',
+      color: 'from-emerald-600 to-emerald-400',
+      icon: '/images/logos/yex.png',
+      mainAchievement: 'Leading global organic growth',
+      metric: 'Current Role',
+      description: 'Own global SEO strategy and organic-channel performance, driving customer acquisition and platform growth across a high-volume content operation.',
+      highlights: [
+        'Set global SEO strategy across educational, market, and product content',
+        'Liaise directly with senior management to align SEO with commercial goals',
+        'Built reporting frameworks and dashboards for retrospectives and channel planning',
+        'Turn organic search into a predictable acquisition channel'
+      ],
+      links: []
+    },
+    {
+      id: 'tomintech',
+      name: 'tomintech',
+      role: 'Founder & Technical Growth Lead',
+      period: 'Oct 2024 - Present',
+      color: 'from-blue-600 to-blue-400',
+      icon: '/images/logos/tomintech.svg',
+      mainAchievement: 'Automated content-growth engine',
+      metric: 'Where marketing met engineering',
+      description: 'Built an automated content-growth engine handling market research, keyword analysis, and content production at scale, plus custom dashboards that turn user behavior into a data-driven SEO strategy.',
+      highlights: [
+        'Modular signal engine for content-angle discovery',
+        'Custom analytics dashboards on user behavior and site performance',
+        'Data-driven SEO strategy, built and run end-to-end'
+      ],
+      links: [
+        { label: 'View Projects', url: '#projects', type: 'primary' },
+        { label: 'GitHub', url: 'https://github.com/Toms-x', type: 'secondary' }
+      ]
+    },
+    {
+      id: 'lbank',
+      name: 'LBank',
+      role: 'Content Marketer',
+      period: 'Oct 2022 - Nov 2024',
+      color: 'from-purple-600 to-purple-400',
+      icon: '/images/logos/lbank.png',
+      mainAchievement: 'Readership grown past 5,000 engaged users',
+      metric: '40%+ Engagement Growth',
+      description: 'Built content-driven SEO around product features like crypto derivatives, and ran multi-channel distribution and KOL partnerships to compound reach.',
+      highlights: [
+        'Content-driven SEO for product features (e.g. derivatives)',
+        'Multi-channel distribution across X, LinkedIn, and Telegram',
+        'Backlink and KOL partnership sourcing',
+        'Promotional content aligned to live market trends'
+      ],
+      links: [
+        { label: 'View Campaign Gallery', url: '#', type: 'primary' }
+      ]
+    },
     {
       id: 'beincrypto',
       name: 'BeInCrypto',
-      role: 'Crypto Content Writer',
-      period: 'July 2021 - April 2024',
-      color: 'from-blue-600 to-blue-400',
+      role: 'Content Strategist',
+      period: 'Feb 2021 - Mar 2024',
+      color: 'from-cyan-600 to-cyan-400',
       icon: '/images/logos/beincrypto.jpeg',
       mainAchievement: 'Generated over 450k+ organic views',
       metric: '100+ Articles Published',
       description: 'Authored 100+ in-depth guides on Web3. Several articles secured SERP features within 3 months, driving 136,900 monthly organic visitors valued at $289,700 in equivalent Google Ads spend (Semrush).',
       highlights: [
-        'Developed standardized data representation framework',
-        'Improved user visibility into key performance metrics',
-        'Covered diverse crypto topics for broad audience reach'
+        'Secured top-10 rankings driving 1,700+ monthly visitors per article',
+        'In-depth keyword and competitor research on complex blockchain topics',
+        'Translated technical finance and blockchain concepts for broad audiences'
       ],
       links: [
         { label: 'View Article Portfolio', url: 'https://beincrypto.com/author/ayotomiwa_oladotun/', type: 'primary' }
       ]
     },
     {
-      id: 'lbank',
-      name: 'LBank',
-      role: 'Content Marketer & Copywriter',
-      period: 'Nov 2022 - Mar 2024',
-      color: 'from-purple-600 to-purple-400',
-      icon: '/images/logos/lbank.png',
-      mainAchievement: '200+ Social media posts & campaigns',
-      metric: '40%+ Engagement Growth',
-      description: 'Produced high-quality daily content and creative social media campaigns driving community growth.',
+      id: 'dopamine',
+      name: 'Web3 Intelligence',
+      role: 'Social Media & Content Manager · Dopamine Wallet',
+      period: 'May 2022 - May 2024',
+      color: 'from-pink-600 to-pink-400',
+      icon: '/images/logos/wbi.png',
+      mainAchievement: 'Grew community 112% to 186k',
+      metric: 'Blog = 30% of site traffic',
+      description: 'Built content platforms into growth engines and turned community signal into product and marketing insight.',
       highlights: [
-        'Daily content & caption creation across platforms',
-        'Multi-platform social media creative concepts',
-        '"Guess What" engagement campaigns',
-        'Emocentric storytelling for audience connection'
+        'Launched and grew the Dopamine Blog to 30% of total website traffic',
+        'Grew online community 112% (to 186k) across forums and social',
+        'Turned Discord/Telegram/email feedback into actionable insights',
+        'Identified industry KOLs for content promotion'
       ],
       links: [
-        { label: 'View Campaign Gallery', url: '#', type: 'primary' },
-        { label: 'Content Samples', url: '#', type: 'secondary' }
+        { label: 'View Case Study', url: '#', type: 'primary' }
       ]
     },
     {
-      id: 'dopamine',
-      name: 'Web3 Intelligence',
-      role: 'Community & Product Manager',
-      period: 'Feb 2022 - May 2024',
-      color: 'from-pink-600 to-pink-400',
-      icon: '/images/logos/wbi.png',
-      mainAchievement: 'End-to-End Product & Website Management',
-      metric: 'Website Performance Optimized',
-      description: 'Managed all aspects of company operations including website, user guides, customer support, and feature testing.',
+      id: 'freelance',
+      name: 'Upwork & Fiverr',
+      role: 'Freelance SEO Writer',
+      period: 'Jan 2018 - Mar 2024',
+      color: 'from-slate-500 to-slate-400',
+      icon: '/images/logos/fiverr.svg',
+      mainAchievement: 'SEO & content for 400+ clients',
+      metric: 'B2B & SaaS',
+      description: 'Where the reps happened: SEO and content strategy across hundreds of global B2B and SaaS clients.',
       highlights: [
-        'Website management & performance optimization',
-        'User guide creation with cross-functional teams',
-        'Customer support across multiple channels',
-        'Feature testing & upsell opportunity identification',
-        'Customer acquisition & retention strategy'
+        'Keyword research and content optimization at volume',
+        'Conversion rate optimization for B2B and SaaS',
+        'Cross-industry content strategy'
       ],
-      links: [
-        { label: 'View Case Study', url: '#', type: 'primary' },
-        { label: 'Website Portfolio', url: '#', type: 'secondary' }
-      ]
+      links: []
     }
   ];
 
@@ -76,10 +131,10 @@ export default function ContentStrategy() {
         {/* Header */}
         <div className="mb-16">
           <h2 className="text-4xl font-bold text-slate-100 mb-4">
-            Content Strategy in Action
+            The Arc
           </h2>
-          <p className="text-lg text-slate-300 mb-12 max-w-3xl">
-            My analysis and content have been featured on leading platforms in the Web3 and tech space
+          <p className="text-lg text-slate-300 max-w-3xl">
+            From a materials science lab to the growth function at a global exchange. The path wasn't a detour &mdash; it compounded. Each role added a layer: writing that ranks, communities that grow themselves, and the data systems that make both repeatable.
           </p>
         </div>
 
@@ -156,25 +211,27 @@ export default function ContentStrategy() {
                       </div>
 
                       {/* Links */}
-                      <div className="space-y-2">
-                        {company.links.map((link, idx) => (
-                          <a
-                            key={idx}
-                            href={link.url}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            onClick={(e) => e.stopPropagation()}
-                            className={`flex items-center justify-between p-3 rounded-lg transition-all group/link ${
-                              link.type === 'primary'
-                                ? `bg-gradient-to-r ${company.color} text-white hover:shadow-lg hover:shadow-white/20`
-                                : 'bg-slate-700 text-slate-300 hover:bg-slate-600'
-                            }`}
-                          >
-                            <span className="font-semibold">{link.label}</span>
-                            <ExternalLink size={16} className="group-hover/link:translate-x-1 transition-transform" />
-                          </a>
-                        ))}
-                      </div>
+                      {company.links.length > 0 && (
+                        <div className="space-y-2">
+                          {company.links.map((link, idx) => (
+                            <a
+                              key={idx}
+                              href={link.url}
+                              target={link.url.startsWith('#') ? '_self' : '_blank'}
+                              rel="noopener noreferrer"
+                              onClick={(e) => e.stopPropagation()}
+                              className={`flex items-center justify-between p-3 rounded-lg transition-all group/link ${
+                                link.type === 'primary'
+                                  ? `bg-gradient-to-r ${company.color} text-white hover:shadow-lg hover:shadow-white/20`
+                                  : 'bg-slate-700 text-slate-300 hover:bg-slate-600'
+                              }`}
+                            >
+                              <span className="font-semibold">{link.label}</span>
+                              <ExternalLink size={16} className="group-hover/link:translate-x-1 transition-transform" />
+                            </a>
+                          ))}
+                        </div>
+                      )}
                     </div>
                   )}
 
@@ -191,7 +248,7 @@ export default function ContentStrategy() {
         {/* Footer Note */}
         <div className="mt-12">
           <p className="text-slate-400 text-sm">
-            Click any company to view detailed achievements and work samples
+            Click any role to view detailed achievements and work samples
           </p>
         </div>
       </div>
