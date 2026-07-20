@@ -27,6 +27,7 @@ export default function ProjectsShowcase() {
       techStack: ['Python', 'GCP VM', 'Anthropic API', 'Telegram API', 'Search Console', 'RSS'],
       metrics: { label: 'Signal Sources', value: '7 modules' },
       links: [
+        { type: 'live', label: 'Overview', url: '/seo-intelligence-bot' },
         { type: 'github', label: 'See Code', url: '#' }
       ]
     },
