@@ -19,12 +19,12 @@ export default function ProjectsShowcase() {
   const projects = [
     {
       id: 101,
-      title: 'SEO Intelligence Bot',
+      title: 'SEO intelligence bot',
       category: 'automation',
       status: 'completed',
-      description: 'A modular signal engine pulling from seven sources (RSS, market anomalies, Reddit, Google Trends, Search Console, competitor gaps, token unlocks), filtered through an LLM into ranked content-angle recommendations delivered straight to Telegram. Turns "what should we write?" from a meeting into a feed.',
+      description: 'a modular signal engine pulling from seven sources (RSS, market anomalies, Reddit, Google Trends, Search Console, competitor gaps, token unlocks), filtered through an LLM into ranked content-angle recommendations delivered straight to Telegram. Turns "what should we write?" from a meeting into a feed.',
       thumbnail: '/images/blogs/bot-saying-hi.png',
-      techStack: ['Python', 'GCP VM', 'Anthropic API', 'Telegram API', 'Search Console', 'RSS'],
+      techStack: ['Python', 'GCP VM', 'Open API', 'Telegram API', 'Search Console', 'RSS'],
       metrics: { label: 'Signal Sources', value: '7 modules' },
       links: [
         { type: 'live', label: 'Overview', url: '/seo-intelligence-bot' },
