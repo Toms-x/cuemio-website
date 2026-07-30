@@ -1,0 +1,41 @@
+---
+// src/components/HowItWorks.astro
+const stages = [
+  {
+    n: '01',
+    title: 'Sources in',
+    copy: 'Seven feeds &mdash; RSS, Reddit, Search Console, Trends, competitor gaps, market anomalies, token unlocks &mdash; pulled on a schedule.',
+  },
+  {
+    n: '02',
+    title: 'LLM ranks',
+    copy: 'Every signal is scored and filtered into a shortlist of content angles worth acting on.',
+  },
+  {
+    n: '03',
+    title: 'Delivered',
+    copy: 'Ranked recommendations land straight in Telegram, ready to brief a writer or queue a draft.',
+  },
+];
+---
+<section class="py-20 md:py-24 font-body border-b border-[#DEE2DC]">
+  <div class="max-w-7xl mx-auto px-6 md:px-10">
+    <p class="font-plex-mono text-xs uppercase tracking-widest text-[#565C63] mb-10">
+      How it works
+    </p>
+    <div class="grid md:grid-cols-3 gap-10 md:gap-8">
+      {stages.map((stage, i) => (
+        <div class="relative">
+          <div class="flex items-baseline gap-3 mb-3">
+            <span class="font-plex-mono text-sm text-[#3A36E0]">{stage.n}</span>
+            <h3 class="font-display text-xl font-semibold text-[#12151A]">{stage.title}</h3>
+          </div>
+          <p class="text-[#565C63] leading-relaxed pr-4" set:html={stage.copy} />
+          {i < stages.length - 1 && (
+            <span class="hidden md:block absolute top-2 -right-4 text-[#DEE2DC]" aria-hidden="true">&rarr;</span>
+          )}
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

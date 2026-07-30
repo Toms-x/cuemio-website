@@ -3,28 +3,29 @@
 import Layout from '../layouts/Layout.astro';
 import SignalFeed from '../components/SignalFeed.jsx';
 
-const title = 'SEO Intelligence Bot — Tomintech';
+const title = 'SEO Intelligence Bot — Cuemio';
 const description = 'A modular signal engine that turns crypto news, market anomalies, and search trends into ranked, AI-interpreted content angles delivered to Telegram.';
 ---
 
-<Layout title={title} description={description}>
-	<div class="max-w-4xl mx-auto px-6 md:px-10 py-20">
+<Layout title={title} description={description} theme="light">
+	<div class="max-w-4xl mx-auto px-6 md:px-10 py-20 font-body">
 
 		<!-- Back link -->
-		<a href="/#projects" class="text-sm text-slate-400 hover:text-slate-200 transition-colors inline-flex items-center gap-1 mb-8">
-			&larr; Back to projects
+		<a href="/#projects" class="font-plex-mono text-xs uppercase tracking-widest text-[#565C63] hover:text-[#12151A] transition-colors inline-flex items-center gap-1 mb-8">
+			&larr; Back to modules
 		</a>
 
 		<!-- Header -->
 		<div class="mb-4">
-			<span class="text-xs font-semibold px-3 py-1 rounded-full border bg-green-500/20 text-green-400 border-green-500/30">
+			<span class="cue-light is-go font-plex-mono text-[11px] uppercase tracking-widest text-[#565C63]">
+				<span class="dot"></span>
 				Live
 			</span>
 		</div>
-		<h1 class="text-4xl md:text-5xl font-bold text-white mb-4">
+		<h1 class="font-display text-4xl md:text-5xl font-semibold text-[#12151A] mb-4">
 			SEO Intelligence Bot
 		</h1>
-		<p class="text-lg text-slate-300 mb-12 max-w-2xl">
+		<p class="text-lg text-[#565C63] mb-12 max-w-2xl leading-relaxed">
 			The unfair advantage in SEO isn't writing faster than everyone else &mdash;
 			it's knowing what to write before the opportunity is gone. This is the
 			system I built to know first.
@@ -33,7 +34,7 @@ const description = 'A modular signal engine that turns crypto news, market anom
 		<!-- Tech stack -->
 		<div class="flex flex-wrap gap-2 mb-16">
 			{['Python', 'OpenAI API', 'Telegram API', 'Railway', 'Search Console', 'RSS', 'n8n'].map((tech) => (
-				<span class="text-xs px-3 py-1.5 bg-slate-800 text-slate-300 rounded border border-slate-700">
+				<span class="text-xs px-3 py-1.5 bg-white text-[#565C63] rounded-md border border-[#DEE2DC]">
 					{tech}
 				</span>
 			))}
@@ -41,18 +42,18 @@ const description = 'A modular signal engine that turns crypto news, market anom
 
 		<!-- The problem -->
 		<section class="mb-16">
-			<h2 class="text-2xl font-bold text-white mb-4">The problem</h2>
-			<p class="text-slate-300 leading-relaxed mb-4">
+			<h2 class="font-display text-2xl font-semibold text-[#12151A] mb-4">The problem</h2>
+			<p class="text-[#565C63] leading-relaxed mb-4">
 				Most SEO content calendars are reactive by the time they're built.
 				A trend surfaces, someone notices it in a Slack channel two days
 				later, a brief gets written, and by the time the article ships the
 				search opportunity has already peaked &mdash; or ten competitors
 				beat you to it.
 			</p>
-			<p class="text-slate-300 leading-relaxed">
+			<p class="text-[#565C63] leading-relaxed">
 				News alone isn't a strategy either. Everyone reading the same
 				headlines produces the same content. The actual edge comes from
-				layering signals that arrive <em class="text-slate-100 not-italic font-medium">before</em>
+				layering signals that arrive <em class="text-[#12151A] not-italic font-medium">before</em>
 				the obvious ones &mdash; market anomalies, rising search queries,
 				your own ranking movements, competitor gaps &mdash; and having
 				something fast enough to catch all of them at once.
@@ -61,8 +62,8 @@ const description = 'A modular signal engine that turns crypto news, market anom
 
 		<!-- The system -->
 		<section class="mb-16">
-			<h2 class="text-2xl font-bold text-white mb-4">The system</h2>
-			<p class="text-slate-300 leading-relaxed mb-6">
+			<h2 class="font-display text-2xl font-semibold text-[#12151A] mb-4">The system</h2>
+			<p class="text-[#565C63] leading-relaxed mb-6">
 				Seven signal sources run on independent schedules &mdash; from
 				15-minute news sweeps to daily Search Console pulls. Every raw
 				signal gets passed through an LLM interpretation layer before it
@@ -79,9 +80,9 @@ const description = 'A modular signal engine that turns crypto news, market anom
 					{ label: 'Competitor gaps', detail: 'What rival academy blogs just published, and what they missed' },
 					{ label: 'Token unlocks', detail: 'Scheduled events with predictable market impact' },
 				].map((item) => (
-					<div class="p-4 bg-slate-800/50 border border-slate-700 rounded-lg">
-						<p class="text-sm font-semibold text-white mb-1">{item.label}</p>
-						<p class="text-xs text-slate-400 leading-relaxed">{item.detail}</p>
+					<div class="p-4 bg-white border border-[#DEE2DC] rounded-xl">
+						<p class="text-sm font-semibold text-[#12151A] mb-1">{item.label}</p>
+						<p class="text-xs text-[#565C63] leading-relaxed">{item.detail}</p>
 					</div>
 				))}
 			</div>
@@ -89,8 +90,8 @@ const description = 'A modular signal engine that turns crypto news, market anom
 
 		<!-- Live demo -->
 		<section class="mb-16">
-			<h2 class="text-2xl font-bold text-white mb-2">See it work</h2>
-			<p class="text-slate-400 text-sm mb-6">
+			<h2 class="font-display text-2xl font-semibold text-[#12151A] mb-2">See it work</h2>
+			<p class="text-[#565C63] text-sm mb-6">
 				A simulated version of the live feed below &mdash; same format,
 				same priority tiers, same interpretation-before-alert pipeline as
 				what actually runs in production. Real output stays private since
@@ -101,8 +102,8 @@ const description = 'A modular signal engine that turns crypto news, market anom
 
 		<!-- What it demonstrates -->
 		<section class="mb-16">
-			<h2 class="text-2xl font-bold text-white mb-4">What this demonstrates</h2>
-			<p class="text-slate-300 leading-relaxed">
+			<h2 class="font-display text-2xl font-semibold text-[#12151A] mb-4">What this demonstrates</h2>
+			<p class="text-[#565C63] leading-relaxed">
 				This is the difference between doing SEO and building the system
 				that does SEO for you. Seven independent data sources, a shared
 				interpretation layer, deduplication so nothing repeats, and a

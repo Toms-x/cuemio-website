@@ -4,20 +4,16 @@
 // Import the main layout and section components.
 import Layout from '../layouts/Layout.astro';
 import Hero from '../components/Hero.astro';
-import ContentStrategy from '../components/ContentStrategy.jsx';
 import ProjectsShowcase from '../components/ProjectsShowcase.jsx';
-import Throughline from '../components/Throughline.astro';
 import Clients from '../components/Clients.astro';
 import CTA from '../components/CTA.astro';
 ---
 
-<Layout title="tomintech — Engineer-turned-Growth Strategist">
+<Layout title="Cuemio — The data systems behind the marketing" theme="light">
 
-  <main class="px-6 md:px-10">
+  <main>
     <Hero />
     <ProjectsShowcase client:load />
-    <ContentStrategy client:load />
-    <Throughline />
     <Clients />
     <CTA />
   </main>

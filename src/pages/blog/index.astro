@@ -1,38 +1,39 @@
 ---
 import { getCollection } from 'astro:content';
-import Layout from '../../layouts/Layout.astro'; 
+import Layout from '../../layouts/Layout.astro';
 
 const posts = (await getCollection('blog')).sort(
   (a, b) => new Date(b.data.pubDate).valueOf() - new Date(a.data.pubDate).valueOf()
 );
 ---
-<Layout title="All Blog Posts">
-  <div class="max-w-7xl mx-auto px-6 py-16">
-    <header class="text-center mb-12">
-      <h1 class="text-5xl font-bold text-slate-100 mb-4">
-        Articles & Insights
+<Layout title="Writing — Cuemio" theme="light">
+  <div class="max-w-7xl mx-auto px-6 py-16 font-body">
+    <header class="mb-12">
+      <p class="font-plex-mono text-xs uppercase tracking-widest text-[#565C63] mb-3">Writing</p>
+      <h1 class="font-display text-4xl md:text-5xl font-semibold text-[#12151A] mb-4">
+        Articles & insights
       </h1>
-      <p class="text-xl text-slate-300 max-w-2xl mx-auto">
-        My thoughts on data, automation, and the intersection of technology and marketing, all in one place.
+      <p class="text-lg text-[#565C63] max-w-2xl leading-relaxed">
+        Notes on data, automation, and the intersection of engineering and marketing, all in one place.
       </p>
     </header>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       {posts.map((post) => (
-        <a 
-          href={`/blog/${post.slug}/`} 
-          class="block bg-slate-800 rounded-lg border border-slate-700 hover:border-blue-600 hover:-translate-y-1 transition-all group"
+        <a
+          href={`/blog/${post.slug}/`}
+          class="block bg-white rounded-2xl border border-[#DEE2DC] hover:border-[#12151A]/30 hover:shadow-lg hover:shadow-black/5 transition-all group overflow-hidden"
         >
-          <img 
-            src={post.data.heroImage} 
-            alt="" 
-            class="rounded-t-lg aspect-video object-cover w-full"
+          <img
+            src={post.data.heroImage}
+            alt=""
+            class="aspect-video object-cover w-full"
           />
           <div class="p-6">
-            <h2 class="text-xl font-bold text-slate-100 group-hover:text-blue-400 mb-2">
+            <h2 class="font-display text-lg font-semibold text-[#12151A] group-hover:text-[#3A36E0] transition-colors mb-2">
               {post.data.title}
             </h2>
-            <p class="text-slate-400">
+            <p class="font-plex-mono text-xs text-[#8A9088]">
               {(new Date(post.data.pubDate)).toLocaleDateString('en-us', {
                 year: 'numeric',
                 month: 'short',

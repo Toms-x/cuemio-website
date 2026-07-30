@@ -1,0 +1,47 @@
+<svg viewBox="0 0 640 360" xmlns="http://www.w3.org/2000/svg">
+  <rect width="640" height="360" fill="#F5F6F2"/>
+
+  <!-- faint grid -->
+  <g stroke="#DEE2DC" stroke-width="1">
+    <line x1="0" y1="90" x2="640" y2="90"/>
+    <line x1="0" y1="180" x2="640" y2="180"/>
+    <line x1="0" y1="270" x2="640" y2="270"/>
+  </g>
+
+  <!-- distribution lines: source fanning out to three channels -->
+  <g stroke="#3A36E0" stroke-width="2" fill="none" opacity="0.55">
+    <path d="M 120 180 C 220 180, 260 90, 420 78"/>
+    <path d="M 120 180 L 460 180"/>
+    <path d="M 120 180 C 220 180, 260 262, 420 276"/>
+  </g>
+
+  <!-- traveling pulse dots on each line -->
+  <g fill="#3A36E0">
+    <circle cx="300" cy="112" r="3.5"/>
+    <circle cx="300" cy="180" r="3.5"/>
+    <circle cx="300" cy="246" r="3.5"/>
+  </g>
+
+  <!-- source node -->
+  <circle cx="120" cy="180" r="10" fill="#12151A"/>
+  <circle cx="120" cy="180" r="16" fill="none" stroke="#12151A" stroke-width="1.5" opacity="0.25"/>
+
+  <!-- channel nodes -->
+  <g>
+    <circle cx="440" cy="76" r="7" fill="#1C7C4C"/>
+    <circle cx="440" cy="76" r="12" fill="none" stroke="#E4F3EA" stroke-width="4"/>
+    <text x="460" y="80" font-family="IBM Plex Mono, monospace" font-size="13" letter-spacing="1" fill="#12151A">REDDIT</text>
+
+    <circle cx="480" cy="180" r="7" fill="#1C7C4C"/>
+    <circle cx="480" cy="180" r="12" fill="none" stroke="#E4F3EA" stroke-width="4"/>
+    <text x="500" y="184" font-family="IBM Plex Mono, monospace" font-size="13" letter-spacing="1" fill="#12151A">TRADINGVIEW</text>
+
+    <circle cx="440" cy="278" r="7" fill="#C6790A"/>
+    <circle cx="440" cy="278" r="12" fill="none" stroke="#FBEEDA" stroke-width="4"/>
+    <text x="460" y="282" font-family="IBM Plex Mono, monospace" font-size="13" letter-spacing="1" fill="#12151A">MEDIUM</text>
+  </g>
+
+  <!-- labels -->
+  <text x="40" y="40" font-family="IBM Plex Mono, monospace" font-size="12" letter-spacing="1.5" fill="#8A9088">DISTRIBUTION</text>
+  <text x="600" y="40" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="12" letter-spacing="1.5" fill="#12151A" font-weight="600">4+ CHANNELS</text>
+</svg>

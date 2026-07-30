@@ -1,0 +1,103 @@
+---
+// src/pages/use-cases.astro
+import Layout from '../layouts/Layout.astro';
+
+const cases = [
+  {
+    eyebrow: 'Sources in \u2192 ranked angles',
+    title: "Growth teams deciding what to publish",
+    tagline: 'Stop guessing at the content calendar.',
+    copy: "If your content calendar gets built from instinct and whatever's trending in a Slack channel, the SEO Intelligence Bot replaces that with seven live signal sources filtered through an LLM into ranked, ready-to-brief content angles.",
+    points: [
+      'Seven independent signal sources, scored and deduplicated',
+      'Delivered as ranked angles, not raw alerts',
+      'Runs on a schedule, shows up in Telegram',
+    ],
+    module: { label: 'SEO Intelligence Bot', status: 'Live', cueClass: 'is-go', href: '/seo-intelligence-bot' },
+  },
+  {
+    eyebrow: 'Distribution as a pipeline',
+    title: 'Teams scaling distribution without scaling headcount',
+    tagline: 'Off-page growth run as a system, not a chore.',
+    copy: 'A structured authority and distribution engine across Reddit, TradingView, and Medium, with a phased strategy and event-driven protocol instead of one-off posting.',
+    points: [
+      'Distribution tracked in a shared performance base',
+      'Phased channel strategy, not spray-and-pray',
+      'Built for crypto and fintech communities specifically',
+    ],
+    module: { label: 'Off-Page Distribution Engine', status: 'Live', cueClass: 'is-go', href: '/off-page-distribution-engine' },
+  },
+  {
+    eyebrow: 'Attribution, not vibes',
+    title: "Teams that need to know what's actually converting",
+    tagline: 'Join distribution to signups, by campaign.',
+    copy: "A live attribution tool that joins off-page content distribution to signups and wallet installs by UTM campaign \u2014 so you know which posts convert, not just which ones got upvoted.",
+    points: [
+      'Attribution joined back to real signups and installs',
+      'Broken down by campaign, not just channel',
+      'Built to answer \u201cdid it work?\u201d directly',
+    ],
+    module: { label: 'Attribution Dashboard', status: 'Beta', cueClass: 'is-standby', href: '/attribution-dashboard' },
+  },
+];
+---
+<Layout
+  title="Use Cases — Cuemio"
+  description="Who Cuemio is built for: growth teams deciding what to publish, teams scaling distribution, and teams that need real attribution on what converts."
+  theme="light"
+>
+  <main class="max-w-6xl mx-auto px-6 md:px-10 py-20 md:py-24 font-body">
+
+    <header class="max-w-2xl mb-16">
+      <p class="font-plex-mono text-xs uppercase tracking-widest text-[#565C63] mb-3">Use cases</p>
+      <h1 class="font-display text-4xl md:text-5xl font-semibold text-[#12151A] mb-5">
+        Built for teams who treat growth as a system.
+      </h1>
+      <p class="text-lg text-[#565C63] leading-relaxed">
+        Each Cuemio module solves one link in the same chain: what to write, where to publish, and whether it worked. Here's where each one fits.
+      </p>
+    </header>
+
+    <div class="space-y-10">
+      {cases.map((c) => (
+        <section class="grid md:grid-cols-[1fr,1.4fr] gap-8 md:gap-12 py-10 border-t border-[#DEE2DC]">
+          <div>
+            <p class="font-plex-mono text-xs uppercase tracking-widest text-[#8A9088] mb-3">{c.eyebrow}</p>
+            <h2 class="font-display text-2xl font-semibold text-[#12151A] mb-2 leading-snug">{c.title}</h2>
+            <p class="text-[#3A36E0] font-medium">{c.tagline}</p>
+          </div>
+          <div>
+            <p class="text-[#565C63] leading-relaxed mb-5">{c.copy}</p>
+            <ul class="space-y-2 mb-6">
+              {c.points.map((p) => (
+                <li class="flex items-start gap-2 text-sm text-[#565C63]">
+                  <span class="text-[#3A36E0] mt-0.5">&#10003;</span>
+                  <span>{p}</span>
+                </li>
+              ))}
+            </ul>
+            <a href={c.module.href} class="inline-flex items-center gap-2 text-sm font-medium text-[#12151A] hover:text-[#3A36E0] transition-colors group">
+              <span class={`cue-light ${c.module.cueClass} font-plex-mono text-[11px] uppercase tracking-widest text-[#565C63]`}>
+                <span class="dot"></span>
+                {c.module.status}
+              </span>
+              <span class="border-b border-[#DEE2DC] group-hover:border-[#3A36E0]">{c.module.label}</span>
+              <span aria-hidden="true" class="group-hover:translate-x-0.5 transition-transform">&rarr;</span>
+            </a>
+          </div>
+        </section>
+      ))}
+    </div>
+
+    <div class="mt-16 p-10 md:p-12 bg-[#12151A] rounded-3xl text-center">
+      <h3 class="font-display text-2xl md:text-3xl font-semibold text-white mb-3">Don't see your use case?</h3>
+      <p class="text-white/60 max-w-xl mx-auto leading-relaxed mb-7">
+        Cuemio is early and modules are shipping on a rolling basis. Join the waitlist and tell us what you're trying to solve.
+      </p>
+      <a href="/#cta" class="inline-block bg-white text-[#12151A] font-medium px-7 py-3 rounded-full hover:bg-[#3A36E0] hover:text-white transition-colors">
+        Join the waitlist
+      </a>
+    </div>
+
+  </main>
+</Layout>

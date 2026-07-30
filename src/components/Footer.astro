@@ -1,11 +1,26 @@
 ---
 // src/components/Footer.astro
+interface Props {
+  theme?: 'dark' | 'light';
+}
+const { theme = 'dark' } = Astro.props;
+const isLight = theme === 'light';
 const today = new Date();
 ---
-<footer class="text-center py-8 border-t border-slate-800">
-    <div class="flex justify-center gap-6 mb-4">
-        <a href="https://github.com/Toms-x" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-white transition-colors">GitHub</a>
-        <a href="https://www.linkedin.com/in/ayotomiwa-oladotun-84b278132" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-white transition-colors">LinkedIn</a>
+{isLight ? (
+  <footer class="text-center py-10 border-t border-[#DEE2DC] font-body">
+    <div class="flex justify-center gap-6 mb-4 text-sm">
+      <a href="https://github.com/Toms-x" target="_blank" rel="noopener noreferrer" class="text-[#565C63] hover:text-[#12151A] transition-colors">GitHub</a>
+      <a href="https://www.linkedin.com/in/ayotomiwa-oladotun-84b278132" target="_blank" rel="noopener noreferrer" class="text-[#565C63] hover:text-[#12151A] transition-colors">LinkedIn</a>
     </div>
-    <p class="text-slate-500">&copy; {today.getFullYear()} tomintech. All rights reserved.</p>
-</footer>
+    <p class="text-[#565C63] text-sm font-plex-mono">&copy; {today.getFullYear()} Cuemio. All rights reserved.</p>
+  </footer>
+) : (
+  <footer class="text-center py-8 border-t border-slate-800">
+    <div class="flex justify-center gap-6 mb-4">
+      <a href="https://github.com/Toms-x" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-white transition-colors">GitHub</a>
+      <a href="https://www.linkedin.com/in/ayotomiwa-oladotun-84b278132" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-white transition-colors">LinkedIn</a>
+    </div>
+    <p class="text-slate-500">&copy; {today.getFullYear()} Cuemio. All rights reserved.</p>
+  </footer>
+)}

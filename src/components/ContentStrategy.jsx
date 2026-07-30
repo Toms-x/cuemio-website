@@ -28,8 +28,8 @@ export default function ContentStrategy() {
       links: []
     },
     {
-      id: 'tomintech',
-      name: 'tomintech',
+      id: 'cuemio',
+      name: 'Cuemio',
       role: 'Founder & Technical Growth Lead',
       period: 'Oct 2024 - Present',
       color: 'from-blue-600 to-blue-400',

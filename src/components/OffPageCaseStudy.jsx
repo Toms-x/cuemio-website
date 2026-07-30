@@ -22,35 +22,35 @@ const KPIS = [
 
 function KpiCard({ label, start, end }) {
   return (
-    <div className="rounded-lg border border-slate-700 bg-slate-800 p-5">
-      <div className="text-xs text-slate-500 mb-3">{label}</div>
+    <div className="bg-white rounded-2xl border border-[#DEE2DC] p-5">
+      <p className="font-plex-mono text-[11px] uppercase tracking-widest text-[#8A9088] mb-3">{label}</p>
       <div className="flex items-baseline gap-2">
-        <span className="text-sm text-slate-500 line-through">{start}</span>
-        <ArrowUpRight size={14} className="text-slate-600" />
-        <span className="text-2xl font-bold text-white">{end}</span>
+        <span className="text-sm text-[#8A9088] line-through">{start}</span>
+        <ArrowUpRight size={14} className="text-[#8A9088]" />
+        <span className="text-2xl font-semibold font-display text-[#12151A]">{end}</span>
       </div>
-      <div className="text-xs text-slate-500 mt-2">month 1 → month 10</div>
+      <p className="font-plex-mono text-[11px] text-[#8A9088] mt-2">month 1 &rarr; month 10</p>
     </div>
   );
 }
 
 export default function OffPageCaseStudy() {
   return (
-    <article className="max-w-3xl mx-auto px-6 py-16 text-slate-300">
+    <article className="max-w-3xl mx-auto px-6 py-16 font-body">
       {/* Hero */}
       <header className="mb-12">
-        <div className="text-xs uppercase tracking-wide text-slate-500 mb-3">Project</div>
-        <h1 className="text-3xl md:text-4xl font-bold text-white leading-tight mb-4">
+        <p className="font-plex-mono text-xs uppercase tracking-widest text-[#565C63] mb-3">Project</p>
+        <h1 className="font-display text-3xl md:text-4xl font-semibold text-[#12151A] leading-tight mb-4">
           Off-page distribution engine
         </h1>
-        <p className="text-lg text-slate-300 leading-relaxed">
+        <p className="text-lg text-[#565C63] leading-relaxed">
           A structured authority and distribution system across Reddit, TradingView, Medium, and
           Paragraph — built to survive Reddit's spam filters, adapt content per platform, and feed
           performance data back into what gets researched next.
         </p>
-        <div className="flex flex-wrap gap-2 mt-5">
+        <div className="flex flex-wrap gap-1.5 mt-5">
           {STACK.map((s) => (
-            <span key={s} className="text-xs px-2.5 py-1 rounded-full bg-slate-700 text-slate-300">
+            <span key={s} className="text-xs px-2 py-1 bg-[#F5F6F2] text-[#565C63] rounded-md border border-[#DEE2DC]">
               {s}
             </span>
           ))}
@@ -59,8 +59,8 @@ export default function OffPageCaseStudy() {
 
       {/* Problem */}
       <section className="mb-12">
-        <h2 className="text-xl font-bold text-white mb-3">The problem</h2>
-        <p className="text-slate-400 leading-relaxed">
+        <h2 className="font-display text-xl font-semibold text-[#12151A] mb-3">The problem</h2>
+        <p className="text-[#565C63] leading-relaxed">
           Off-page growth for a crypto exchange blog is usually run as a checklist: post here, post
           there, hope something sticks. That breaks fast on Reddit specifically — crypto accounts get
           flagged and banned almost immediately if they post links or promotional language before
@@ -71,10 +71,10 @@ export default function OffPageCaseStudy() {
 
       {/* System */}
       <section className="mb-12">
-        <h2 className="text-xl font-bold text-white mb-3 flex items-center gap-2">
-          <GitBranch size={18} className="text-blue-400" /> The system
+        <h2 className="font-display text-xl font-semibold text-[#12151A] mb-3 flex items-center gap-2">
+          <GitBranch size={18} className="text-[#3A36E0]" /> The system
         </h2>
-        <p className="text-slate-400 leading-relaxed mb-4">
+        <p className="text-[#565C63] leading-relaxed mb-4">
           Market trend research feeds a platform adaptation layer, which rewrites the same
           underlying research per platform — unbranded and comment-first for Reddit, chart-analysis
           writeups for TradingView, long-form articles for Medium, and crypto-native essays for
@@ -85,20 +85,20 @@ export default function OffPageCaseStudy() {
 
       {/* Reddit phases */}
       <section className="mb-12">
-        <h2 className="text-xl font-bold text-white mb-3 flex items-center gap-2">
-          <Shield size={18} className="text-blue-400" /> The phased Reddit strategy
+        <h2 className="font-display text-xl font-semibold text-[#12151A] mb-3 flex items-center gap-2">
+          <Shield size={18} className="text-[#3A36E0]" /> The phased Reddit strategy
         </h2>
-        <p className="text-slate-400 leading-relaxed mb-4">
+        <p className="text-[#565C63] leading-relaxed mb-4">
           Reddit is the highest-risk, highest-value channel, so it runs its own internal phasing.
           This sequencing is what took the account from three bans to zero.
         </p>
-        <div className="divide-y divide-slate-700 border border-slate-700 rounded-lg overflow-hidden bg-slate-800/50">
+        <div className="divide-y divide-[#DEE2DC] border border-[#DEE2DC] rounded-2xl overflow-hidden bg-white">
           {PHASES.map((p) => (
             <div key={p.phase} className="flex gap-4 p-4">
-              <div className="text-sm font-bold text-blue-400 w-6 shrink-0">{p.phase}</div>
+              <div className="font-display text-sm font-semibold text-[#3A36E0] w-6 shrink-0">{p.phase}</div>
               <div>
-                <div className="text-sm font-medium text-white">{p.name}</div>
-                <div className="text-sm text-slate-400">{p.detail}</div>
+                <p className="text-sm font-medium text-[#12151A]">{p.name}</p>
+                <p className="text-sm text-[#565C63]">{p.detail}</p>
               </div>
             </div>
           ))}
@@ -107,11 +107,11 @@ export default function OffPageCaseStudy() {
 
       {/* Results */}
       <section className="mb-12">
-        <h2 className="text-xl font-bold text-white mb-3 flex items-center gap-2">
-          <LineChart size={18} className="text-blue-400" /> Results — 10 months in
+        <h2 className="font-display text-xl font-semibold text-[#12151A] mb-3 flex items-center gap-2">
+          <LineChart size={18} className="text-[#3A36E0]" /> Results — 10 months in
         </h2>
-        <p className="text-xs text-slate-500 mb-4">
-          Illustrative figures pending verified export — replace with confirmed Cision/Lark data.
+        <p className="font-plex-mono text-[11px] uppercase tracking-widest text-[#8A9088] mb-4">
+          Illustrative figures pending verified export
         </p>
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
           {KPIS.map((k) => (
@@ -122,12 +122,12 @@ export default function OffPageCaseStudy() {
 
       {/* What's next */}
       <section className="mb-4">
-        <h2 className="text-xl font-bold text-white mb-3">What I'd automate next</h2>
-        <p className="text-slate-400 leading-relaxed">
+        <h2 className="font-display text-xl font-semibold text-[#12151A] mb-3">What I'd automate next</h2>
+        <p className="text-[#565C63] leading-relaxed">
           The manual bottleneck is the adaptation layer — rewriting one research piece into four
           platform-specific formats by hand. The next step is routing that through an LLM-assisted
           drafting stage, with a live{' '}
-          <a href="/attribution-dashboard" className="text-blue-400 hover:underline">
+          <a href="/attribution-dashboard" className="text-[#3A36E0] hover:underline">
             attribution layer
           </a>{' '}
           telling the research stage which topics and formats are actually converting, not just

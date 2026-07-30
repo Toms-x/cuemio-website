@@ -67,10 +67,10 @@ function joinData(contentRows, conversionRows) {
 }
 
 const PLATFORM_COLOR = {
-  Reddit: "#FF6B4A",
-  TradingView: "#60A5FA",
-  Medium: "#4ADE80",
-  Paragraph: "#C084FC",
+  Reddit: "#D8573A",
+  TradingView: "#3A36E0",
+  Medium: "#3C8A5C",
+  Paragraph: "#8A5CF6",
 };
 
 function UploadBox({ label, onData, hasCustom }) {
@@ -85,10 +85,10 @@ function UploadBox({ label, onData, hasCustom }) {
     [onData]
   );
   return (
-    <label className="flex items-center gap-2 border border-dashed border-slate-600 rounded-lg px-3 py-2 text-sm text-slate-300 cursor-pointer hover:border-slate-400 transition-colors">
+    <label className="flex items-center gap-2 border border-dashed border-[#DEE2DC] rounded-lg px-3 py-2 text-sm text-[#565C63] cursor-pointer hover:border-[#12151A] transition-colors font-body">
       <Upload size={14} />
       <span>{label}</span>
-      {hasCustom && <span className="text-xs text-green-400 ml-1">(custom loaded)</span>}
+      {hasCustom && <span className="font-plex-mono text-[11px] text-[#3C8A5C] ml-1">custom loaded</span>}
       <input type="file" accept=".csv" className="hidden" onChange={handleFile} />
     </label>
   );
@@ -127,11 +127,12 @@ export default function AttributionDashboard() {
   };
 
   return (
-    <div className="w-full max-w-5xl mx-auto p-6 bg-slate-900 text-slate-300 font-sans">
+    <div className="w-full max-w-5xl mx-auto p-6 font-body">
       <div className="flex items-start justify-between mb-6 flex-wrap gap-3">
         <div>
-          <h1 className="text-xl font-bold text-white tracking-tight">Distribution attribution</h1>
-          <p className="text-sm text-slate-400 mt-1">
+          <p className="font-plex-mono text-xs uppercase tracking-widest text-[#565C63] mb-2">Module</p>
+          <h1 className="font-display text-xl font-semibold text-[#12151A]">Distribution attribution</h1>
+          <p className="text-sm text-[#565C63] mt-1">
             Which posts actually drive signups and wallet installs — not just views.
           </p>
         </div>
@@ -154,7 +155,7 @@ export default function AttributionDashboard() {
           />
           <button
             onClick={resetSample}
-            className="flex items-center gap-1 text-sm text-slate-400 hover:text-white px-2 py-2"
+            className="flex items-center gap-1 text-sm text-[#565C63] hover:text-[#12151A] px-2 py-2"
           >
             <RefreshCw size={14} /> Reset sample
           </button>
@@ -163,43 +164,43 @@ export default function AttributionDashboard() {
 
       {/* Summary cards */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
-        <div className="border border-slate-700 bg-slate-800 rounded-lg p-4">
-          <div className="text-xs text-slate-500 mb-1">Total conversions</div>
-          <div className="text-2xl font-bold text-white">{totals.totalConversions}</div>
-          <div className="text-xs text-slate-500 mt-1">signups + wallet installs</div>
+        <div className="bg-white rounded-2xl border border-[#DEE2DC] p-4">
+          <p className="font-plex-mono text-[11px] uppercase tracking-widest text-[#8A9088] mb-1">Total conversions</p>
+          <p className="font-display text-2xl font-semibold text-[#12151A]">{totals.totalConversions}</p>
+          <p className="text-xs text-[#8A9088] mt-1">signups + wallet installs</p>
         </div>
-        <div className="border border-slate-700 bg-slate-800 rounded-lg p-4">
-          <div className="text-xs text-slate-500 mb-1">Blended conversion rate</div>
-          <div className="text-2xl font-bold text-white">{totals.avgRate.toFixed(2)}%</div>
-          <div className="text-xs text-slate-500 mt-1">of {totals.totalViews.toLocaleString()} views</div>
+        <div className="bg-white rounded-2xl border border-[#DEE2DC] p-4">
+          <p className="font-plex-mono text-[11px] uppercase tracking-widest text-[#8A9088] mb-1">Blended conversion rate</p>
+          <p className="font-display text-2xl font-semibold text-[#12151A]">{totals.avgRate.toFixed(2)}%</p>
+          <p className="text-xs text-[#8A9088] mt-1">of {totals.totalViews.toLocaleString()} views</p>
         </div>
-        <div className="border border-slate-700 bg-slate-800 rounded-lg p-4">
-          <div className="text-xs text-slate-500 mb-1 flex items-center gap-1">
+        <div className="bg-white rounded-2xl border border-[#DEE2DC] p-4">
+          <p className="font-plex-mono text-[11px] uppercase tracking-widest text-[#8A9088] mb-1 flex items-center gap-1">
             <Target size={12} /> Most efficient post
-          </div>
-          <div className="text-sm font-medium text-white leading-snug">
+          </p>
+          <p className="text-sm font-medium text-[#12151A] leading-snug">
             {topEfficiency ? topEfficiency.title : "—"}
-          </div>
-          <div className="text-xs text-slate-500 mt-1">
+          </p>
+          <p className="text-xs text-[#8A9088] mt-1">
             {topEfficiency ? `${topEfficiency.convRate.toFixed(2)}% conversion rate` : ""}
-          </div>
+          </p>
         </div>
       </div>
 
       {/* Scatter: views vs conversions */}
-      <div className="border border-slate-700 bg-slate-800 rounded-lg p-4 mb-6">
+      <div className="bg-white rounded-2xl border border-[#DEE2DC] p-4 mb-6">
         <div className="flex items-center gap-2 mb-3">
-          <TrendingUp size={14} className="text-blue-400" />
-          <span className="text-sm font-medium text-white">Views vs conversions, by post</span>
+          <TrendingUp size={14} className="text-[#3A36E0]" />
+          <span className="text-sm font-medium text-[#12151A]">Views vs conversions, by post</span>
         </div>
-        <p className="text-xs text-slate-500 mb-3">
+        <p className="text-xs text-[#8A9088] mb-3">
           Top-right = high reach and high pull. Bottom-right = vanity traffic. Top-left = small but efficient.
         </p>
         <ResponsiveContainer width="100%" height={280}>
           <ScatterChart margin={{ top: 10, right: 20, bottom: 10, left: 0 }}>
-            <CartesianGrid strokeDasharray="3 3" stroke="#334155" />
-            <XAxis type="number" dataKey="views" name="Views" tick={{ fontSize: 11, fill: "#94A3B8" }} stroke="#475569" />
-            <YAxis type="number" dataKey="conversions" name="Conversions" tick={{ fontSize: 11, fill: "#94A3B8" }} stroke="#475569" />
+            <CartesianGrid strokeDasharray="3 3" stroke="#DEE2DC" />
+            <XAxis type="number" dataKey="views" name="Views" tick={{ fontSize: 11, fill: "#565C63" }} stroke="#DEE2DC" />
+            <YAxis type="number" dataKey="conversions" name="Conversions" tick={{ fontSize: 11, fill: "#565C63" }} stroke="#DEE2DC" />
             <ZAxis type="number" dataKey="convRate" range={[60, 400]} name="Conv. rate" />
             <Tooltip
               cursor={{ strokeDasharray: "3 3" }}
@@ -207,23 +208,23 @@ export default function AttributionDashboard() {
                 if (!payload || !payload.length) return null;
                 const d = payload[0].payload;
                 return (
-                  <div className="bg-slate-800 border border-slate-600 rounded-lg p-2 text-xs shadow-lg">
-                    <div className="font-medium text-white">{d.title}</div>
-                    <div className="text-slate-400">{d.platform}</div>
-                    <div className="text-slate-300">{d.views} views · {d.conversions} conversions</div>
-                    <div className="text-slate-300">{d.convRate.toFixed(2)}% rate</div>
+                  <div className="bg-white border border-[#DEE2DC] rounded-lg p-2 text-xs shadow-md font-body">
+                    <p className="font-medium text-[#12151A]">{d.title}</p>
+                    <p className="text-[#8A9088]">{d.platform}</p>
+                    <p className="text-[#565C63]">{d.views} views &middot; {d.conversions} conversions</p>
+                    <p className="text-[#565C63]">{d.convRate.toFixed(2)}% rate</p>
                   </div>
                 );
               }}
             />
             <Scatter data={joined}>
               {joined.map((entry, i) => (
-                <Cell key={i} fill={PLATFORM_COLOR[entry.platform] || "#94A3B8"} fillOpacity={0.85} />
+                <Cell key={i} fill={PLATFORM_COLOR[entry.platform] || "#8A9088"} fillOpacity={0.85} />
               ))}
             </Scatter>
           </ScatterChart>
         </ResponsiveContainer>
-        <div className="flex gap-4 mt-2 text-xs text-slate-400 flex-wrap">
+        <div className="flex gap-4 mt-2 text-xs text-[#565C63] flex-wrap">
           {Object.entries(PLATFORM_COLOR).map(([platform, color]) => (
             <div key={platform} className="flex items-center gap-1">
               <span className="w-2 h-2 rounded-full inline-block" style={{ background: color }} />
@@ -234,9 +235,9 @@ export default function AttributionDashboard() {
       </div>
 
       {/* Ranked table */}
-      <div className="border border-slate-700 bg-slate-800 rounded-lg overflow-hidden">
+      <div className="bg-white rounded-2xl border border-[#DEE2DC] overflow-hidden">
         <table className="w-full text-sm">
-          <thead className="bg-slate-900/60 text-slate-500 text-xs uppercase tracking-wide">
+          <thead className="bg-[#F5F6F2] font-plex-mono text-[11px] uppercase tracking-widest text-[#8A9088]">
             <tr>
               <th className="text-left px-4 py-2">Post</th>
               <th className="text-left px-4 py-2">Platform</th>
@@ -248,33 +249,28 @@ export default function AttributionDashboard() {
           </thead>
           <tbody>
             {ranked.map((r) => (
-              <tr key={r.content_id || r.utm_campaign} className="border-t border-slate-700">
-                <td className="px-4 py-2 text-slate-200">{r.title}</td>
+              <tr key={r.content_id || r.utm_campaign} className="border-t border-[#DEE2DC]">
+                <td className="px-4 py-2 text-[#12151A]">{r.title}</td>
                 <td className="px-4 py-2">
                   <span
                     className="text-xs px-2 py-0.5 rounded-full"
                     style={{
-                      background: `${PLATFORM_COLOR[r.platform] || "#94A3B8"}22`,
-                      color: PLATFORM_COLOR[r.platform] || "#94A3B8",
+                      background: `${PLATFORM_COLOR[r.platform] || "#8A9088"}1A`,
+                      color: PLATFORM_COLOR[r.platform] || "#565C63",
                     }}
                   >
                     {r.platform}
                   </span>
                 </td>
-                <td className="px-4 py-2 text-right text-slate-300">{r.views.toLocaleString()}</td>
-                <td className="px-4 py-2 text-right text-slate-300">{r.signups}</td>
-                <td className="px-4 py-2 text-right text-slate-300">{r.installs}</td>
-                <td className="px-4 py-2 text-right font-medium text-white">{r.convRate.toFixed(2)}%</td>
+                <td className="px-4 py-2 text-right text-[#565C63]">{r.views.toLocaleString()}</td>
+                <td className="px-4 py-2 text-right text-[#565C63]">{r.signups}</td>
+                <td className="px-4 py-2 text-right text-[#565C63]">{r.installs}</td>
+                <td className="px-4 py-2 text-right font-medium text-[#12151A]">{r.convRate.toFixed(2)}%</td>
               </tr>
             ))}
           </tbody>
         </table>
       </div>
-
-      <p className="text-xs text-slate-500 mt-4">
-        Sample data shown by default — upload your own content and conversion exports (matching the
-        columns above) to replace it. Join key is <code className="text-slate-400">utm_campaign</code>.
-      </p>
     </div>
   );
 }

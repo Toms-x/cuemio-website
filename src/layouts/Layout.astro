@@ -8,10 +8,18 @@ import '../styles/global.css';
 interface Props {
   title: string;
   description?: string;
-  image?: string; 
+  image?: string;
+  theme?: 'dark' | 'light';
 }
 
-const { title, description = "Engineer-turned-growth strategist who builds the data systems behind the marketing. SEO Manager at YEX Exchange.", image } = Astro.props; 
+const {
+  title,
+  description = "Cuemio pulls signal from seven sources, ranks the decision, and ships it to your team automatically.",
+  image,
+  theme = 'dark',
+} = Astro.props;
+
+const isLight = theme === 'light';
 ---
 <!doctype html>
 <html lang="en" class="scroll-smooth">
@@ -19,13 +27,13 @@ const { title, description = "Engineer-turned-growth strategist who builds the d
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    
+
     <title>{title}</title>
     {description && <meta name="description" content={description} />}
-    
+
     <link rel="icon" type="image/svg+xml" href="/faviconn.svg" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Space+Grotesk:wght@700&family=Instrument+Sans:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 
     {/* Google Analytics (GA4) Script */}
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-401E0S6TYS"></script>
@@ -36,12 +44,17 @@ const { title, description = "Engineer-turned-growth strategist who builds the d
       gtag('config', 'G-401E0S6TYS');
     </script>
   </head>
-  <body class="bg-slate-900 text-slate-200 antialiased selection:bg-blue-600 selection:text-white">
-    <Header />
+  <body class:list={[
+    "antialiased",
+    isLight
+      ? "bg-[#F5F6F2] text-[#12151A] selection:bg-[#3A36E0] selection:text-white"
+      : "bg-slate-900 text-slate-200 selection:bg-blue-600 selection:text-white"
+  ]}>
+    <Header theme={theme} />
     <main>
       <slot />
     </main>
-    <Footer />
+    <Footer theme={theme} />
   </body>
 </html>
 

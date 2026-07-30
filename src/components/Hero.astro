@@ -1,44 +1,50 @@
 ---
 // src/components/Hero.astro
+const signals = [
+  'RSS', 'REDDIT', 'GOOGLE TRENDS', 'SEARCH CONSOLE',
+  'COMPETITOR GAPS', 'MARKET ANOMALIES', 'TOKEN UNLOCKS'
+];
 ---
-<section class="relative overflow-hidden">
-    <div class="absolute inset-0 z-0">
-        <img 
-            src="/images/hero-visualizer.png" 
-            alt="Abstract data visualization background" 
-            class="w-full h-full object-cover"
-        />
-        <div class="absolute inset-0 bg-slate-900/70 backdrop-blur-sm"></div>
+<section class="relative overflow-hidden font-body">
+    <div class="relative z-10 max-w-7xl mx-auto px-6 md:px-10 pt-28 pb-20 md:pt-36 md:pb-28">
+        <div class="max-w-3xl">
+            <span class="cue-light is-standby font-plex-mono text-xs uppercase tracking-widest text-[#565C63] border border-[#DEE2DC] rounded-full pl-2.5 pr-3 py-1.5 mb-7">
+                <span class="dot"></span>
+                Early access
+            </span>
+
+            <h1 class="font-display text-[2.75rem] leading-[1.1] md:text-6xl md:leading-[1.08] font-semibold text-[#12151A] tracking-tight">
+                The data systems behind growth decisions: what to build, where to spend, and whether it worked.
+            </h1>
+            <p class="mt-6 text-lg text-[#565C63] max-w-2xl leading-relaxed">
+                Cuemio is the growth-systems engine behind organic acquisition for crypto and fintech products. Content engineering, technical SEO, and the automation that turns signal into ranked decisions, plus the lead-generation systems that turn traffic into pipeline.
+            </p>
+
+            <div class="mt-9 flex flex-col sm:flex-row gap-3">
+                <a href="#cta" class="bg-[#12151A] hover:bg-[#3A36E0] text-white font-medium px-7 py-3 rounded-full transition-colors text-center">
+                    Join the waitlist
+                </a>
+                <a href="#projects" class="border border-[#DEE2DC] hover:border-[#12151A] text-[#12151A] font-medium px-7 py-3 rounded-full transition-colors text-center">
+                    See the modules
+                </a>
+            </div>
+
+            <div class="mt-8 cue-light is-go font-plex-mono text-xs text-[#565C63]">
+                <span class="dot"></span>
+                Now: the SEO intelligence bot is live, running organic growth at YEX Exchange.
+            </div>
+        </div>
     </div>
 
-    <div class="relative z-10 max-w-7xl mx-auto px-6 md:px-10 py-32 md:py-40">
-        <div class="max-w-3xl">
-            <p class="text-sm font-semibold uppercase tracking-widest text-blue-400 mb-5">
-                Growth Strategy · SEO · Data Systems
-            </p>
-            <h1 class="text-5xl md:text-7xl font-bold text-slate-100 leading-tight">
-                Engineer-turned-growth strategist.
-            </h1>
-            <p class="mt-6 text-lg text-slate-200 max-w-2xl">
-                I build the data systems behind the marketing. Seven years turning research, automation, and analytics into organic growth for crypto and fintech platforms &mdash; currently SEO Manager at YEX Exchange.
-            </p>
-
-            <div class="mt-10 flex flex-col sm:flex-row gap-4">
-                <a href="#projects" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-3 rounded-lg transition-colors">
-                    Explore the Work
-                </a>
-                <a href="https://www.linkedin.com/in/ayotomiwa-oladotun-84b278132" target="_blank" class="border border-slate-600 hover:bg-slate-800 text-slate-200 font-semibold px-8 py-3 rounded-lg transition-colors">
-                    Connect on LinkedIn
-                </a>
-            </div>
-
-            <div class="mt-8 flex items-center gap-2 text-sm text-slate-400">
-                <span class="relative flex h-2.5 w-2.5">
-                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                    <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+    <!-- Signal ticker: the seven sources feeding the engine, in motion -->
+    <div class="relative border-y border-[#DEE2DC] bg-white/60 py-4 overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_96px,_black_calc(100%-96px),transparent_100%)]">
+        <div class="flex w-max animate-ticker">
+            {[...signals, ...signals].map((s) => (
+                <span class="font-plex-mono text-xs tracking-widest text-[#565C63] mx-6 whitespace-nowrap flex items-center gap-2">
+                    <span class="w-1 h-1 rounded-full bg-[#565C63]/50"></span>
+                    {s}
                 </span>
-                Now: leading global organic growth at YEX Exchange.
-            </div>
+            ))}
         </div>
     </div>
 </section>

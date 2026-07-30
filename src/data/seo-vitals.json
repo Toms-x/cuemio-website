@@ -1,0 +1,17 @@
+{
+  "last_updated": "2026-07-28T00:00:00.000Z",
+  "performance_kpis": {
+    "organic_traffic": "—",
+    "organic_impressions": "—",
+    "avg_ctr": "—"
+  },
+  "technical_health": {
+    "cwv_good_percent": 0,
+    "index_valid": 0,
+    "index_errors": 0
+  },
+  "content_strategy": {
+    "top_gaining_keywords": [],
+    "top_landing_pages": []
+  }
+}

@@ -1,19 +1,57 @@
 ---
 // src/components/Header.astro
+interface Props {
+  theme?: 'dark' | 'light';
+}
+const { theme = 'dark' } = Astro.props;
+const isLight = theme === 'light';
 ---
-<header class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+{isLight ? (
+  <header class="max-w-7xl mx-auto px-6 md:px-10 py-6 font-body">
     <nav class="flex items-center justify-between">
-        <a href="/" class="text-2xl font-bold font-heading text-slate-100">tomintech</a>
-        
-        <div class="hidden md:flex items-center gap-8">
-            <a href="#projects" class="text-slate-300 hover:text-white transition-colors">Work</a>
-            <a href="#articles" class="text-slate-300 hover:text-white transition-colors">Writing</a>
-            <a href="mailto:oladotuntomiwa@gmail.com" class="hover:text-blue-400 transition-colors">Contact</a>
-        </div>
+      <a href="/" class="flex items-center gap-2.5 text-lg font-semibold font-display text-[#12151A]">
+        Cuemio
+        <span class="cue-light is-standby font-plex-mono text-[10px] uppercase tracking-widest text-[#565C63] border border-[#DEE2DC] rounded-full pl-2 pr-2.5 py-1">
+          <span class="dot"></span>
+          Early access
+        </span>
+      </a>
 
-        <a href="/about" class="text-slate-300 hover:text-white transition-colors">About</a>
+      <div class="hidden md:flex items-center gap-8 text-sm">
+        <a href="#projects" class="text-[#565C63] hover:text-[#12151A] transition-colors">Modules</a>
+        <a href="/use-cases" class="text-[#565C63] hover:text-[#12151A] transition-colors">Use Cases</a>
+        <a href="#articles" class="text-[#565C63] hover:text-[#12151A] transition-colors">Writing</a>
+        <a href="/about" class="text-[#565C63] hover:text-[#12151A] transition-colors">About</a>
+      </div>
 
-        <div class="md:hidden">
-            </div>
+      <a href="#cta" class="bg-[#12151A] hover:bg-[#3A36E0] text-white text-sm font-medium font-body px-5 py-2.5 rounded-full transition-colors">
+        Join waitlist
+      </a>
     </nav>
-</header>
+  </header>
+) : (
+  <header class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <nav class="flex items-center justify-between">
+      <a href="/" class="flex items-center gap-2 text-2xl font-bold font-heading text-slate-100">
+        Cuemio
+        <span class="hidden sm:inline-block text-[11px] font-semibold uppercase tracking-widest text-blue-400 bg-blue-500/10 border border-blue-500/30 rounded-full px-2.5 py-1">
+          Early access
+        </span>
+      </a>
+
+      <div class="hidden md:flex items-center gap-8">
+        <a href="#projects" class="text-slate-300 hover:text-white transition-colors">Modules</a>
+        <a href="/use-cases" class="text-slate-300 hover:text-white transition-colors">Use Cases</a>
+        <a href="#articles" class="text-slate-300 hover:text-white transition-colors">Writing</a>
+        <a href="/about" class="text-slate-300 hover:text-white transition-colors">About</a>
+      </div>
+
+      <a href="#cta" class="bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold px-5 py-2 rounded-lg transition-colors">
+        Join waitlist
+      </a>
+
+      <div class="md:hidden">
+        </div>
+    </nav>
+  </header>
+)}

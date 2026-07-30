@@ -1,0 +1,58 @@
+<svg viewBox="0 0 640 360" xmlns="http://www.w3.org/2000/svg">
+  <rect width="640" height="360" fill="#F5F6F2"/>
+
+  <!-- faint grid -->
+  <g stroke="#DEE2DC" stroke-width="1">
+    <line x1="0" y1="90" x2="640" y2="90"/>
+    <line x1="0" y1="180" x2="640" y2="180"/>
+    <line x1="0" y1="270" x2="640" y2="270"/>
+  </g>
+
+  <!-- seven signal sources converging into the hub -->
+  <g stroke="#3A36E0" stroke-width="1.5" fill="none" opacity="0.45">
+    <path d="M 90 40 C 200 40, 240 150, 320 180"/>
+    <path d="M 90 85 C 200 85, 250 160, 320 180"/>
+    <path d="M 90 130 C 210 130, 260 170, 320 180"/>
+    <path d="M 90 180 L 320 180"/>
+    <path d="M 90 230 C 210 230, 260 190, 320 180"/>
+    <path d="M 90 275 C 200 275, 250 200, 320 180"/>
+    <path d="M 90 320 C 200 320, 240 210, 320 180"/>
+  </g>
+
+  <!-- source nodes -->
+  <g fill="#8A9088">
+    <circle cx="90" cy="40" r="4"/>
+    <circle cx="90" cy="85" r="4"/>
+    <circle cx="90" cy="130" r="4"/>
+    <circle cx="90" cy="180" r="4"/>
+    <circle cx="90" cy="230" r="4"/>
+    <circle cx="90" cy="275" r="4"/>
+    <circle cx="90" cy="320" r="4"/>
+  </g>
+
+  <!-- hub: the LLM ranking step -->
+  <circle cx="320" cy="180" r="14" fill="#12151A"/>
+  <circle cx="320" cy="180" r="22" fill="none" stroke="#12151A" stroke-width="1.5" opacity="0.2"/>
+
+  <!-- single ranked output line -->
+  <path d="M 334 180 L 470 180" stroke="#3A36E0" stroke-width="2.5" stroke-linecap="round"/>
+
+  <!-- ranked output: three priority rows -->
+  <g>
+    <rect x="480" y="130" width="120" height="24" rx="6" fill="#FFFFFF" stroke="#DEE2DC"/>
+    <circle cx="496" cy="142" r="4" fill="#1C7C4C"/>
+    <rect x="510" y="138" width="70" height="8" rx="2" fill="#DEE2DC"/>
+
+    <rect x="480" y="168" width="120" height="24" rx="6" fill="#FFFFFF" stroke="#DEE2DC"/>
+    <circle cx="496" cy="180" r="4" fill="#C6790A"/>
+    <rect x="510" y="176" width="55" height="8" rx="2" fill="#DEE2DC"/>
+
+    <rect x="480" y="206" width="120" height="24" rx="6" fill="#FFFFFF" stroke="#DEE2DC"/>
+    <circle cx="496" cy="218" r="4" fill="#8A9088"/>
+    <rect x="510" y="214" width="65" height="8" rx="2" fill="#DEE2DC"/>
+  </g>
+
+  <!-- labels -->
+  <text x="40" y="40" font-family="IBM Plex Mono, monospace" font-size="12" letter-spacing="1.5" fill="#8A9088">7 SIGNALS IN</text>
+  <text x="600" y="40" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="12" letter-spacing="1.5" fill="#12151A" font-weight="600">RANKED OUT</text>
+</svg>

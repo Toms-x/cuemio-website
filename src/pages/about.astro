@@ -1,105 +1,48 @@
 ---
 import Layout from '../layouts/Layout.astro';
+
+const skills = [
+  'SEO & Content Ops', 'Automation (Python, GCP, n8n)', 'Analytics & Data',
+  'Growth Strategy', 'Web3 / DeFi',
+];
 ---
-<Layout 
-    title="About — Ayotomiwa Oladotun" 
-    description="Engineer-turned-growth strategist. Seven years in crypto and fintech, currently SEO Manager at YEX Exchange. Building the data systems behind the marketing."
+<Layout
+    title="About — Ayotomiwa Oladotun"
+    description="Engineer-turned-growth strategist building Cuemio, the data systems behind the marketing."
+    theme="light"
 >
-    <main class="max-w-6xl mx-auto px-6 py-16 md:py-24">
-        <div class="grid grid-cols-1 lg:grid-cols-3 lg:gap-16">
+    <main class="max-w-2xl mx-auto px-6 py-20 md:py-28 font-body">
 
-            <!-- Sidebar -->
-            <aside class="lg:col-span-1 mb-12 lg:mb-0">
-                <img src="/images/my pro picture.png" alt="Ayotomiwa Oladotun" class="w-48 h-48 rounded-full mx-auto lg:mx-0 mb-8" />
+        <p class="font-plex-mono text-xs uppercase tracking-widest text-[#565C63] mb-6">About</p>
 
-                <h2 class="text-2xl font-bold text-slate-100 mb-4">Competencies</h2>
-                <ul class="space-y-3 text-slate-300">
-                    <li class="flex items-start gap-2">
-                        <span class="text-blue-400 mt-1">✓</span>
-                        <span><strong>SEO & Content Operations:</strong> Global SEO strategy, content scaling, technical audits, Ahrefs, Search Console, SimilarWeb</span>
-                    </li>
-                    <li class="flex items-start gap-2">
-                        <span class="text-blue-400 mt-1">✓</span>
-                        <span><strong>Automation & Intelligence:</strong> Python, GCP, Anthropic API, n8n, APScheduler, Telegram bots</span>
-                    </li>
-                    <li class="flex items-start gap-2">
-                        <span class="text-blue-400 mt-1">✓</span>
-                        <span><strong>Analytics & Data:</strong> Google Analytics, Looker, custom dashboards, SQL, Pandas, Streamlit</span>
-                    </li>
-                    <li class="flex items-start gap-2">
-                        <span class="text-blue-400 mt-1">✓</span>
-                        <span><strong>BD & Growth Strategy:</strong> Commercial due diligence, B2B outreach, GTM strategy, KOL partnerships</span>
-                    </li>
-                    <li class="flex items-start gap-2">
-                        <span class="text-blue-400 mt-1">✓</span>
-                        <span><strong>Web3:</strong> DeFi, derivatives, stablecoins, on-chain analytics, smart contracts</span>
-                    </li>
-                </ul>
-
-                <div class="mt-8 space-y-3">
-                    <h2 class="text-2xl font-bold text-slate-100 mb-4">Credentials</h2>
-                    <ul class="space-y-2 text-slate-300 text-sm">
-                        <li>CIM Level 4 — Professional & Digital Marketing <span class="text-slate-500">(Distinctions in MarTech & Social)</span></li>
-                        <li>SEO Specialization — UC Davis</li>
-                        <li>Content Marketing Strategy — UC Davis</li>
-                        <li>Financial Markets — Yale University</li>
-                        <li>Narrative Economics — Yale University</li>
-                        <li>B.Eng, Metallurgical & Materials Engineering — FUTA</li>
-                    </ul>
-                </div>
-
-                <div class="mt-8">
-                    <a 
-                        href="mailto:oladotuntomiwa@gmail.com?subject=CV Request" 
-                        class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-3 rounded-lg transition-colors w-full text-center"
-                    >
-                        Request CV
-                    </a>
-                    <p class="text-slate-500 text-xs text-center mt-2">CV available on request</p>
-                </div>
-            </aside>
-
-            <!-- Main Content -->
-            <section class="lg:col-span-2">
-                <p class="text-sm font-semibold uppercase tracking-widest text-blue-400 mb-3">About</p>
-                <h1 class="text-5xl font-bold text-slate-100">Ayotomiwa Oladotun</h1>
-                <p class="text-2xl text-blue-400 mt-2 mb-8 font-semibold">Engineer-turned-Growth Strategist</p>
-
-                <div class="prose prose-invert prose-lg">
-
-                    <h2>Where it started</h2>
-                    <p>
-                        I studied metallurgical and materials science engineering, a discipline built entirely around understanding why systems behave the way they do under pressure, and how to engineer better outcomes from first principles. I didn't know it at the time, but that was marketing training.
-                    </p>
-
-                    <h2>The pivot that wasn't really a pivot</h2>
-                    <p>
-                        I moved into content and growth because I was genuinely good at making complex technical things legible. Blockchain mechanics, DeFi protocols, derivatives. I could write about them in ways that ranked and taught. Seven years across BeInCrypto, LBank, Dopamine Wallet, and now YEX Exchange.
-                    </p>
-                    <p>
-                        But the further I got into growth, the more I realized the interesting work wasn't the content itself, it was the system behind it. What do we write? Where do we publish? Did it work? Those questions needed instrumentation, not instinct. So I built the instrumentation.
-                    </p>
-
-                    <h2>What I do now</h2>
-                    <p>
-                        I'm SEO Manager at YEX Exchange, running a full content operation across educational guides, market recaps, product tutorials, and campaign articles. The job is building the pipeline that decides what gets made, and the reporting that proves whether it mattered.
-                    </p>
-                    <p>
-                        In parallel, through tomintech, I build the tools I wish existed: a modular SEO intelligence bot on GCP that pulls signals from seven sources and surfaces ranked content angles via Telegram; a structured off-page content system across Reddit, TradingView, and Medium; custom analytics dashboards for behavioral insights. Engineering applied to marketing.
-                    </p>
-
-                </div>
-
-                <div class="mt-12 flex flex-col sm:flex-row gap-4">
-                    <a href="/#projects" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-3 rounded-lg transition-colors text-center">
-                        See the Work
-                    </a>
-                    <a href="https://www.linkedin.com/in/ayotomiwa-oladotun-84b278132" target="_blank" rel="noopener noreferrer" class="border border-slate-600 hover:bg-slate-800 text-slate-200 font-semibold px-8 py-3 rounded-lg transition-colors text-center">
-                        Connect on LinkedIn
-                    </a>
-                </div>
-            </section>
-
+        <div class="flex items-center gap-5 mb-8">
+            <img src="/images/my pro picture.png" alt="Ayotomiwa Oladotun" class="w-16 h-16 rounded-full border border-[#DEE2DC] object-cover" />
+            <div>
+                <h1 class="font-display text-2xl font-semibold text-[#12151A]">Ayotomiwa Oladotun</h1>
+                <p class="text-[#3A36E0] font-medium">Building Cuemio</p>
+            </div>
         </div>
+
+        <p class="text-lg text-[#565C63] leading-relaxed mb-10">
+            Trained as an engineer, spent seven years turning that into organic growth and lead generation for crypto and fintech platforms. Currently SEO Manager at YEX Exchange. Cuemio is the system I built for the questions instinct can't answer: what to build, where to spend, and whether it worked.
+        </p>
+
+        <div class="flex flex-wrap gap-2 mb-10">
+            {skills.map((s) => (
+                <span class="text-xs px-3 py-1.5 bg-white text-[#565C63] rounded-full border border-[#DEE2DC]">
+                    {s}
+                </span>
+            ))}
+        </div>
+
+        <div class="flex flex-col sm:flex-row gap-3">
+            <a href="https://calendly.com/ayotomiwa_/30min" target="_blank" rel="noopener noreferrer" class="bg-[#12151A] hover:bg-[#3A36E0] text-white font-medium px-7 py-3 rounded-full transition-colors text-center">
+                Book a chat
+            </a>
+            <a href="/#projects" class="border border-[#DEE2DC] hover:border-[#12151A] text-[#12151A] font-medium px-7 py-3 rounded-full transition-colors text-center">
+                See the modules
+            </a>
+        </div>
+
     </main>
 </Layout>
