@@ -1,5 +1,4 @@
-// Place any global data in this file.
-// You can import this data from anywhere in your site by using the `import` keyword.
+// global data file.
 
 export const SITE_TITLE = 'Cuemio';
-export const SITE_DESCRIPTION = 'The data systems that decide what to write, where to publish, and whether it worked.';
+export const SITE_DESCRIPTION = 'GTM systems for crypto and fintech: content engineering, technical SEO, and lead generation, wired together by automation.';
