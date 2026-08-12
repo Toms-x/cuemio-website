@@ -1,0 +1,60 @@
+<svg viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#F5F6F2"/>
+
+  <!-- faint grid -->
+  <g stroke="#DEE2DC" stroke-width="1">
+    <line x1="0" y1="160" x2="1200" y2="160"/>
+    <line x1="0" y1="300" x2="1200" y2="300"/>
+    <line x1="0" y1="440" x2="1200" y2="440"/>
+    <line x1="280" y1="0" x2="280" y2="630"/>
+    <line x1="560" y1="0" x2="560" y2="630"/>
+    <line x1="840" y1="0" x2="840" y2="630"/>
+  </g>
+
+  <!-- area fill under the volume line -->
+  <path
+    d="M 80 480 L 130 130 L 190 175 L 260 340 L 340 420 L 430 460 L 520 468 L 620 470
+       L 700 468 L 760 390 L 800 260 L 860 235 L 940 250 L 1030 260 L 1100 262 L 1120 262
+       L 1120 500 L 80 500 Z"
+    fill="#3A36E0"
+    fill-opacity="0.08"
+  />
+
+  <!-- the volume line -->
+  <path
+    d="M 80 480 L 130 130 L 190 175 L 260 340 L 340 420 L 430 460 L 520 468 L 620 470
+       L 700 468 L 760 390 L 800 260 L 860 235 L 940 250 L 1030 260 L 1100 262 L 1120 262"
+    fill="none"
+    stroke="#3A36E0"
+    stroke-width="3"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+
+  <!-- TGE marker -->
+  <line x1="130" y1="130" x2="130" y2="500" stroke="#12151A" stroke-width="1" stroke-dasharray="3 4" opacity="0.35"/>
+  <circle cx="130" cy="130" r="6" fill="#12151A"/>
+  <circle cx="130" cy="130" r="11" fill="none" stroke="#12151A" stroke-width="1.5" opacity="0.2"/>
+  <text x="130" y="108" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="13" letter-spacing="1" fill="#12151A" font-weight="600">TGE</text>
+  <text x="130" y="545" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="11" letter-spacing="0.5" fill="#8A9088">MAR 23</text>
+
+  <!-- collapse marker -->
+  <circle cx="520" cy="468" r="5" fill="#565C63"/>
+  <text x="520" y="565" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="11" letter-spacing="0.5" fill="#8A9088">APR 16</text>
+  <text x="520" y="580" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="11" letter-spacing="0.5" fill="#8A9088">−97%</text>
+
+  <!-- SpaceX catalyst marker -->
+  <line x1="800" y1="260" x2="800" y2="500" stroke="#1C7C4C" stroke-width="1" stroke-dasharray="3 4" opacity="0.4"/>
+  <circle cx="800" cy="260" r="6" fill="#1C7C4C"/>
+  <circle cx="800" cy="260" r="11" fill="none" stroke="#E4F3EA" stroke-width="4"/>
+  <text x="800" y="238" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="13" letter-spacing="1" fill="#1C7C4C" font-weight="600">SPACEX NEWS</text>
+  <text x="800" y="545" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="11" letter-spacing="0.5" fill="#8A9088">JUN 11</text>
+
+  <!-- header labels -->
+  <text x="80" y="56" font-family="IBM Plex Mono, monospace" font-size="14" letter-spacing="1.5" fill="#8A9088">CUEMIO / TEARDOWN</text>
+  <text x="80" y="86" font-family="Instrument Sans, sans-serif" font-size="26" font-weight="600" fill="#12151A">Backpack Exchange &#8212; DEX Volume</text>
+
+  <text x="1120" y="56" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="14" letter-spacing="1.5" fill="#12151A" font-weight="600">ON-CHAIN DATA</text>
+  <text x="1120" y="76" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="12" letter-spacing="1" fill="#8A9088">SOURCE: DUNE ANALYTICS</text>
+
+</svg>
