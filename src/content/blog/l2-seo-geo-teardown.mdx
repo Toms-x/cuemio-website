@@ -1,0 +1,53 @@
+---
+title: "L2 SEO & GEO Visibility Teardown: The Search Narrative Layer 2s Are Losing"
+pubDate: 2026-08-25
+heroImage: "/images/blogs/l2-seo-geo-teardown.svg"
+description: "Base, Arbitrum, Optimism, and zkSync are absent from Google's top 10 on 11 of 12 high-intent L2 keywords, but show up in AI-grounded answers on 11 of 12. A two-channel visibility gap analysis, and the repeatable methodology behind it."
+---
+
+Most SEO analysis for crypto projects stops at Google. But developers, and increasingly everyone, are getting answers from AI search layers that cite different sources, weight different signals, and surface different projects. If you're only optimizing for Google, you're solving half the visibility problem. I ran 12 high-intent L2 keywords through both channels to see exactly where that gap sits today.
+
+## The result
+
+Base, Arbitrum, Optimism, and zkSync are absent from Google's organic top 10 on 11 of 12 keywords. They fare far better in AI-grounded answers, appearing on 11 of 12, but even there, third-party sites still own most of the actual sourcing. One keyword, "L2 bridge security risks," has zero L2 presence in either channel.
+
+## Methodology
+
+**Layer 1: Competitive SERP tracking.** Pulled Google's top 10 organic results for 12 keywords spanning commercial intent ("best L2 for developers"), technical/educational ("optimistic rollup vs zk rollup security"), and ecosystem intent ("L2 grants program 2026"), via Serper.dev. Checked whether Base, Arbitrum, Optimism, or zkSync's own domains appeared.
+
+**Layer 2: GEO (Generative Engine Optimization) tracking.** Sent the same 12 queries through a web-search-grounded LLM call via OpenRouter, and logged which L2s got mentioned, how early in the answer, and which sources the model actually cited.
+
+**Layer 3: Grounding verification.** Early testing caught the model fabricating a fully-detailed, plausible-sounding "recent announcement" when web search hadn't actually fired — dates, feature names, and all. I rebuilt the GEO layer to check every response for real citation URLs and discard any response without them. Every data point in this report comes from a citation-verified, grounded response.
+
+**Layer 4: Composite scoring.** For each keyword, scored the fraction of target L2s missing from Google's top 10 and the fraction missing from grounded AI answers, then averaged the two into a single gap score. Highest score means biggest content opportunity.
+
+## What the data shows
+
+| Channel | L2 visibility across 12 keywords |
+|---|---|
+| Google organic top 10 | Present on 1/12 |
+| AI-grounded answers | Present on 11/12 |
+
+![Bar chart comparing L2 visibility on Google's top 10 organic results (1 of 12 keywords) versus AI-grounded search answers (11 of 12 keywords)](/images/blogs/l2-seo-geo-gap-chart.svg)
+
+That gap is the core finding. Google's SERP for these terms is owned almost entirely by aggregators, Reddit threads, and comparison-content sites — not by the projects themselves. AI-grounded answers do better at surfacing the actual L2s by name, but the sources they cite are still mostly third-party (crypto blogs, docs aggregators, Coinbase), not the L2s' own properties.
+
+The one keyword where an L2's own domain shows up in Google at all: "how to deploy smart contract on L2," a docs-intent query. L2 documentation ranks fine. Everything upstream of that — comparison, education, ecosystem — doesn't.
+
+## Ranked content opportunities
+
+**1. L2 bridge security risks.** Zero presence in either channel. The single clearest gap, and directly relevant to any L2's security narrative.
+
+**2. EVM compatible layer 2 / optimistic vs zk rollup security / L2 fraud proof explained.** Invisible on Google, only partially covered in AI answers. Strong candidates for long-form educational content.
+
+**3. L2 grants program 2026.** Invisible on Google — an ecosystem and developer-acquisition angle with essentially no defended search real estate.
+
+**4. Comparison and "best of" queries** (best L2 for developers, cheapest gas fees, fastest L2, best for dapps). Invisible on Google despite decent AI-answer coverage. A clear case for building comparison and positioning pages that Google can actually index and rank.
+
+## Tools used
+
+Serper.dev for SERP data, OpenRouter with a web search plugin and citation verification for GEO data, Google Search Console for baseline site data, Python for the pipeline. Full code — `serp_layer.py`, `geo_layer.py`, `composite_score.py` — is public: [github.com/Toms-x/l2-seo-geo](https://github.com/Toms-x/l2-seo-geo).
+
+## What this is a proof of concept for
+
+This is a repeatable methodology, not a one-off report. Point it at any set of keywords and any set of competitors — exchange, L2, wallet — and it produces the same two-channel gap analysis. That's the system: pull signal from scattered sources, convert it into a ranked, actionable list.

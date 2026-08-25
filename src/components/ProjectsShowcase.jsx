@@ -23,21 +23,29 @@ export default function ProjectsShowcase() {
       href: '/off-page-distribution-engine',
     },
     {
-      title: 'Finance tracker',
-      status: 'Beta',
-      cueClass: 'is-standby',
-      description: 'A self-built net-worth and cash-flow tracker covering income, expenses, assets, and liabilities.',
-      thumbnail: '/images/modules/finance-tracker.svg',
-      href: '#',
+      title: 'L2 SEO & GEO visibility teardown',
+      status: 'Live',
+      cueClass: 'is-go',
+      description: 'A two-channel visibility gap analysis, Google SERP vs AI-grounded search, across 12 L2 keywords, built as a repeatable pipeline.',
+      thumbnail: '/images/blogs/l2-seo-geo-teardown.svg',
+      href: '/blog/l2-seo-geo-teardown',
+    },
+    {
+      title: 'AI-powered Reddit lead generation',
+      status: 'Live',
+      cueClass: 'is-go',
+      description: 'Automated signal detection and lead qualification on Reddit, replacing manual monitoring with a ranked pipeline.',
+      thumbnail: '/images/modules/off-page-distribution.svg',
+      href: 'https://github.com/Toms-x/automation-projects/tree/main/reddit-ad',
     },
   ];
 
   // Supporting work — real, but doesn't need a full card.
   const alsoBuilt = [
     { label: 'Smart contract monitoring system', url: 'https://github.com/Toms-x/smart-contract-monitor' },
-    { label: 'AI-powered Reddit lead generation', url: 'https://github.com/Toms-x/automation-projects/tree/main/reddit-ad' },
     { label: 'AI finance research assistant', url: 'https://github.com/Toms-x/automation-projects/tree/main/script-generator' },
     { label: 'SEO content automation dashboard', url: '/vitals-dashboard' },
+    { label: 'Finance tracker', url: '#' },
   ];
 
   return (
@@ -50,15 +58,15 @@ export default function ProjectsShowcase() {
             Modules
           </p>
           <h2 className="font-display text-3xl md:text-4xl font-semibold text-[#12151A] mb-4">
-            The Cuemio systems
+            Cuemio systems
           </h2>
           <p className="text-lg text-[#565C63] max-w-3xl leading-relaxed">
-            Ships as modules, each one usable on its own.
+            ships as modules, each one usable on its own.
           </p>
         </div>
 
         {/* Module cards */}
-        <div className="grid md:grid-cols-3 gap-5">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
           {modules.map((m) => {
             const hasPage = m.href !== '#';
             const CardTag = hasPage ? 'a' : 'div';

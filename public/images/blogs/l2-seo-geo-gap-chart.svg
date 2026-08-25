@@ -1,0 +1,26 @@
+<svg viewBox="0 0 640 360" xmlns="http://www.w3.org/2000/svg">
+  <rect width="640" height="360" fill="#F5F6F2"/>
+
+  <!-- faint grid -->
+  <g stroke="#DEE2DC" stroke-width="1">
+    <line x1="0" y1="90" x2="640" y2="90"/>
+    <line x1="0" y1="180" x2="640" y2="180"/>
+    <line x1="0" y1="270" x2="640" y2="270"/>
+  </g>
+
+  <!-- Bar 1: Google organic top 10 -->
+  <text x="40" y="120" font-family="IBM Plex Mono, monospace" font-size="11" letter-spacing="1" fill="#565C63">GOOGLE TOP 10</text>
+  <rect x="40" y="132" width="560" height="22" rx="5" fill="#FFFFFF" stroke="#DEE2DC"/>
+  <rect x="40" y="132" width="47" height="22" rx="5" fill="#C6790A"/>
+  <text x="40" y="176" font-family="Instrument Sans, sans-serif" font-size="20" font-weight="600" fill="#12151A">1 / 12</text>
+
+  <!-- Bar 2: AI-grounded answers -->
+  <text x="40" y="222" font-family="IBM Plex Mono, monospace" font-size="11" letter-spacing="1" fill="#565C63">AI-GROUNDED</text>
+  <rect x="40" y="234" width="560" height="22" rx="5" fill="#FFFFFF" stroke="#DEE2DC"/>
+  <rect x="40" y="234" width="513" height="22" rx="5" fill="#1C7C4C"/>
+  <text x="40" y="278" font-family="Instrument Sans, sans-serif" font-size="20" font-weight="600" fill="#12151A">11 / 12</text>
+
+  <!-- labels -->
+  <text x="40" y="40" font-family="IBM Plex Mono, monospace" font-size="12" letter-spacing="1.5" fill="#8A9088">12 KEYWORDS</text>
+  <text x="600" y="40" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="12" letter-spacing="1.5" fill="#12151A" font-weight="600">GOOGLE VS AI</text>
+</svg>
