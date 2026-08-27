@@ -1,0 +1,73 @@
+<svg viewBox="0 0 640 360" xmlns="http://www.w3.org/2000/svg">
+  <rect width="640" height="360" fill="#F5F6F2"/>
+
+  <!-- faint grid, kept minimal so the filmstrip reads as the hero shape -->
+  <g stroke="#DEE2DC" stroke-width="1">
+    <line x1="0" y1="90" x2="640" y2="90"/>
+    <line x1="0" y1="270" x2="640" y2="270"/>
+  </g>
+
+  <!-- source: a few reddit posts, unbranded -->
+  <g fill="#D8573A" opacity="0.85">
+    <circle cx="66" cy="46" r="4"/>
+    <circle cx="66" cy="62" r="4"/>
+    <circle cx="66" cy="78" r="4"/>
+  </g>
+  <g stroke="#8A9088" stroke-width="1.2" opacity="0.6">
+    <line x1="74" y1="46" x2="96" y2="46"/>
+    <line x1="74" y1="62" x2="88" y2="62"/>
+    <line x1="74" y1="78" x2="102" y2="78"/>
+  </g>
+
+  <!-- feed line down into the classifier -->
+  <path d="M 66 90 L 66 108" stroke="#3A36E0" stroke-width="2" opacity="0.5"/>
+
+  <!-- classifier: a diamond, not a circle-hub, to keep this shape distinct -->
+  <rect x="52" y="108" width="28" height="28" rx="4" fill="#12151A" transform="rotate(45 66 122)"/>
+
+  <path d="M 66 136 L 66 150" stroke="#3A36E0" stroke-width="2"/>
+
+  <!-- the filmstrip: pain point -> escalation -> product enters -> resolution -->
+  <g>
+    <!-- perforations -->
+    <g fill="#DEE2DC">
+      <circle cx="86" cy="150" r="3"/><circle cx="126" cy="150" r="3"/><circle cx="166" cy="150" r="3"/>
+      <circle cx="216" cy="150" r="3"/><circle cx="256" cy="150" r="3"/><circle cx="296" cy="150" r="3"/>
+      <circle cx="346" cy="150" r="3"/><circle cx="386" cy="150" r="3"/><circle cx="426" cy="150" r="3"/>
+      <circle cx="476" cy="150" r="3"/><circle cx="516" cy="150" r="3"/><circle cx="556" cy="150" r="3"/>
+      <circle cx="86" cy="270" r="3"/><circle cx="126" cy="270" r="3"/><circle cx="166" cy="270" r="3"/>
+      <circle cx="216" cy="270" r="3"/><circle cx="256" cy="270" r="3"/><circle cx="296" cy="270" r="3"/>
+      <circle cx="346" cy="270" r="3"/><circle cx="386" cy="270" r="3"/><circle cx="426" cy="270" r="3"/>
+      <circle cx="476" cy="270" r="3"/><circle cx="516" cy="270" r="3"/><circle cx="556" cy="270" r="3"/>
+    </g>
+
+    <!-- panel 1: pain point -->
+    <rect x="80" y="160" width="100" height="100" rx="6" fill="#FFFFFF" stroke="#DEE2DC"/>
+    <circle cx="130" cy="210" r="16" fill="#8A9088"/>
+    <path d="M 118 202 L 124 208 M 124 202 L 118 208 M 136 202 L 142 208 M 142 202 L 136 208" stroke="#F5F6F2" stroke-width="2" stroke-linecap="round"/>
+
+    <!-- panel 2: escalation -->
+    <rect x="210" y="160" width="100" height="100" rx="6" fill="#FFFFFF" stroke="#DEE2DC"/>
+    <circle cx="260" cy="210" r="20" fill="#C6790A"/>
+    <g stroke="#C6790A" stroke-width="2" stroke-linecap="round">
+      <line x1="260" y1="182" x2="260" y2="174"/>
+      <line x1="284" y1="196" x2="291" y2="191"/>
+      <line x1="236" y1="196" x2="229" y2="191"/>
+    </g>
+
+    <!-- panel 3: product enters (hero moment) -->
+    <rect x="340" y="160" width="100" height="100" rx="6" fill="#FFFFFF" stroke="#DEE2DC"/>
+    <circle cx="382" cy="210" r="18" fill="#12151A"/>
+    <circle cx="404" cy="210" r="13" fill="#3A36E0"/>
+
+    <!-- panel 4: resolution, highlighted as the payoff frame -->
+    <rect x="470" y="158" width="100" height="104" rx="6" fill="#FFFFFF" stroke="#1C7C4C" stroke-width="2"/>
+    <circle cx="520" cy="210" r="20" fill="#1C7C4C"/>
+    <path d="M 511 210 L 517 217 L 530 202" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="520" cy="210" r="27" fill="none" stroke="#E4F3EA" stroke-width="4"/>
+  </g>
+
+  <!-- labels -->
+  <text x="40" y="30" font-family="IBM Plex Mono, monospace" font-size="12" letter-spacing="1.5" fill="#8A9088">PAIN POINT</text>
+  <text x="600" y="30" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="12" letter-spacing="1.5" fill="#12151A" font-weight="600">4-PANEL AD</text>
+</svg>

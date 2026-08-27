@@ -35,7 +35,7 @@ export default function ProjectsShowcase() {
       status: 'Live',
       cueClass: 'is-go',
       description: 'Automated signal detection and lead qualification on Reddit, replacing manual monitoring with a ranked pipeline.',
-      thumbnail: '/images/modules/off-page-distribution.svg',
+      thumbnail: '/images/modules/reddit-lead-gen-v2.svg',
       href: 'https://github.com/Toms-x/automation-projects/tree/main/reddit-ad',
     },
   ];
