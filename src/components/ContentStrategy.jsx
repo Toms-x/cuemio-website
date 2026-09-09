@@ -83,7 +83,7 @@ export default function ContentStrategy() {
         'Translated technical finance and blockchain concepts for broad audiences'
       ],
       links: [
-        { label: 'View Article Portfolio', url: 'https://beincrypto.com/author/ayotomiwa_oladotun/', type: 'primary' }
+        { label: 'View Article Portfolio', url: '/press', type: 'primary' }
       ]
     },
     {

@@ -1,0 +1,135 @@
+---
+// src/pages/press.astro
+import Layout from '../layouts/Layout.astro';
+
+const groups = [
+  {
+    label: 'Explainers & analysis',
+    note: 'Breaking down regulatory, economic, and technical concepts for a general audience.',
+    articles: [
+      {
+        title: 'What Does It Mean To Receive a Wells Notice From the SEC?',
+        url: 'https://beincrypto.com/learn/wells-notice-explained/',
+        blurb: 'A regulatory deep-dive into SEC enforcement process, using Coinbase and Crypto.com as case studies.',
+      },
+      {
+        title: 'Tokenomics Explained: The Economics of Cryptocurrency Tokens',
+        url: 'https://beincrypto.com/learn/tokenomics-explained/',
+        blurb: 'How token supply, distribution, and incentive design shape a crypto project\u2019s economics.',
+      },
+      {
+        title: 'What Is Market Capitalization? Why Is It Important in Crypto?',
+        url: 'https://beincrypto.com/learn/what-is-market-capitalization/',
+        blurb: 'Market cap mechanics for both equities and crypto, including diluted market cap.',
+      },
+      {
+        title: 'What Is Fiat Currency? How Does It Differ From Cryptocurrency?',
+        url: 'https://beincrypto.com/learn/fiat-currency-explained/',
+        blurb: 'The history of fiat money and how it compares structurally to decentralized currency.',
+      },
+      {
+        title: 'What is a Private Key in Crypto?',
+        url: 'https://beincrypto.com/learn/private-key-crypto/',
+        blurb: 'Core cryptographic concepts behind wallet security, written for a non-technical reader.',
+      },
+    ],
+  },
+  {
+    label: 'Protocol deep-dives',
+    note: 'Explaining how individual blockchain networks work, from consensus to tokenomics.',
+    articles: [
+      {
+        title: 'Cosmos: A Comprehensive Guide to What It Is and How It Works',
+        url: 'https://beincrypto.com/learn/cosmos-crypto-guide/',
+        blurb: 'Interoperability, the Tendermint consensus engine, and the IBC protocol explained end to end.',
+      },
+      {
+        title: 'Mina Protocol Explained: A Guide to the Lightweight Blockchain',
+        url: 'https://beincrypto.com/learn/mina-protocol-explained/',
+        blurb: 'How Mina uses recursive zero-knowledge proofs to keep its blockchain size fixed at 22KB.',
+      },
+      {
+        title: 'Casper: A Comprehensive Guide to What It Is and How It Works',
+        url: 'https://beincrypto.com/learn/casper-crypto-guide/',
+        blurb: 'An enterprise-focused layer-1 and its Highway consensus mechanism.',
+      },
+    ],
+  },
+  {
+    label: 'Industry & trend features',
+    note: 'Wider-lens reporting on where the market and industry are heading.',
+    articles: [
+      {
+        title: 'Top 8 Companies Building in the Metaverse in 2025',
+        url: 'https://beincrypto.com/learn/top-companies-building-metaverse/',
+        blurb: 'How Meta, Google, Microsoft, Nike, and others are approaching the metaverse differently.',
+      },
+      {
+        title: 'Bitcoin Pizza Day Explained: The Story of the First BTC Transaction',
+        url: 'https://beincrypto.com/learn/bitcoin-pizza-day/',
+        blurb: 'A narrative feature on crypto\u2019s most famous transaction and the people behind it.',
+      },
+    ],
+  },
+  {
+    label: 'Comparisons & buying guides',
+    note: 'Structured, criteria-based reviews built for reader decision-making.',
+    articles: [
+      {
+        title: 'Trust Wallet vs. MetaMask: Which Crypto Wallet Is Best?',
+        url: 'https://beincrypto.com/learn/trust-wallet-vs-metamask/',
+        blurb: 'Head-to-head comparison across security, supported assets, and user experience.',
+      },
+      {
+        title: 'A Guide to the 10 Best Sui (SUI) Wallets in 2025',
+        url: 'https://beincrypto.com/learn/best-sui-wallet/',
+        blurb: 'Wallet selection criteria applied across ten options, from hardware to browser extensions.',
+      },
+    ],
+  },
+];
+---
+<Layout
+  title="Writing & Press — Cuemio"
+  description="Selected long-form editorial, industry analysis, and comparison guides across blockchain, DeFi, and Web3 publications."
+  theme="light"
+>
+  <main class="max-w-3xl mx-auto px-6 md:px-10 py-20 md:py-24 font-body">
+
+    <p class="font-plex-mono text-xs uppercase tracking-widest text-[#565C63] mb-6">Writing & Press</p>
+    <h1 class="font-display text-4xl md:text-5xl font-semibold text-[#12151A] mb-5">
+      Selected writing.
+    </h1>
+    <p class="text-lg text-[#565C63] leading-relaxed mb-6">
+      Long-form editorial and analysis on blockchain, DeFi, and Web3, published across BeInCrypto and
+      other industry outlets. Grouped below by format &mdash; explainers, protocol deep-dives, industry
+      features, and comparison guides.
+    </p>
+    <p class="text-sm text-[#8A9088] leading-relaxed mb-16">
+      For examples of web systems, social distribution strategy, or video work, see the
+      <a href="/#projects" class="text-[#3A36E0] hover:underline">Cuemio modules</a> or reach out directly &mdash;
+      happy to share those separately.
+    </p>
+
+    <div class="space-y-14">
+      {groups.map((group) => (
+        <section>
+          <h2 class="font-display text-xl font-semibold text-[#12151A] mb-1">{group.label}</h2>
+          <p class="text-sm text-[#8A9088] mb-6">{group.note}</p>
+          <ul class="space-y-5">
+            {group.articles.map((a) => (
+              <li class="border-t border-[#DEE2DC] pt-5">
+                <a href={a.url} target="_blank" rel="noopener noreferrer" class="font-medium text-[#12151A] hover:text-[#3A36E0] transition-colors">
+                  {a.title}
+                </a>
+                <p class="text-sm text-[#565C63] mt-1.5 leading-relaxed">{a.blurb}</p>
+                <p class="font-plex-mono text-[11px] uppercase tracking-widest text-[#8A9088] mt-2">BeInCrypto</p>
+              </li>
+            ))}
+          </ul>
+        </section>
+      ))}
+    </div>
+
+  </main>
+</Layout>
