@@ -1,0 +1,57 @@
+---
+// src/components/FAQ.astro
+const faqs = [
+  {
+    q: 'What is Cuemio?',
+    a: 'Cuemio is a GTM engineering toolkit for crypto and fintech growth teams. It combines technical SEO, automated content frameworks, and data systems that show what to publish, where to distribute, and whether it converted.',
+  },
+  {
+    q: 'What modules does Cuemio include?',
+    a: 'Cuemio ships as standalone modules: an SEO intelligence bot, an off-page distribution engine, an L2 SEO and GEO visibility teardown, AI-powered Reddit lead generation, and an attribution dashboard that is currently in beta.',
+  },
+  {
+    q: 'How does the SEO intelligence bot work?',
+    a: 'It pulls seven signal sources on a schedule: RSS, Reddit, Search Console, Google Trends, competitor gaps, market anomalies, and token unlocks. An LLM scores and filters each signal into ranked content angles, which are delivered to Telegram.',
+  },
+  {
+    q: 'Who is Cuemio built for?',
+    a: 'Growth teams at crypto and fintech companies that need to decide what to publish, scale distribution without adding headcount, or find out which content actually drives signups.',
+  },
+  {
+    q: 'How can I get access?',
+    a: 'Cuemio is in early access. The SEO intelligence bot is live today. Join the waitlist to hear when the other modules ship, or contact the founder directly.',
+  },
+  {
+    q: 'Who built Cuemio?',
+    a: 'Cuemio was built by Ayotomiwa Oladotun, an SEO Manager at YEX Exchange with a background in engineering and seven years of organic growth work in crypto and fintech.',
+  },
+];
+
+const faqLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((f) => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: { '@type': 'Answer', text: f.a },
+  })),
+};
+---
+<section id="faq" class="py-20 md:py-24 font-body border-t border-[#DEE2DC]">
+  <div class="max-w-3xl mx-auto px-6 md:px-10">
+    <p class="font-plex-mono text-xs uppercase tracking-widest text-[#565C63] mb-3">FAQ</p>
+    <h2 class="font-display text-3xl md:text-4xl font-semibold text-[#12151A] mb-10">Common questions</h2>
+    <div class="divide-y divide-[#DEE2DC] border-y border-[#DEE2DC]">
+      {faqs.map((f) => (
+        <details class="group py-5">
+          <summary class="flex items-center justify-between cursor-pointer list-none font-display font-medium text-[#12151A]">
+            {f.q}
+            <span class="text-[#8A9088] group-open:rotate-45 transition-transform" aria-hidden="true">+</span>
+          </summary>
+          <p class="mt-3 text-[#565C63] leading-relaxed">{f.a}</p>
+        </details>
+      ))}
+    </div>
+  </div>
+  <script type="application/ld+json" set:html={JSON.stringify(faqLd)} />
+</section>
