@@ -44,8 +44,6 @@ export default function ProjectsShowcase() {
   const alsoBuilt = [
     { label: 'Smart contract monitoring system', url: 'https://github.com/Toms-x/smart-contract-monitor' },
     { label: 'AI finance research assistant', url: 'https://github.com/Toms-x/automation-projects/tree/main/script-generator' },
-    { label: 'SEO content automation dashboard', url: '/vitals-dashboard' },
-    { label: 'Finance tracker', url: '#' },
   ];
 
   return (
