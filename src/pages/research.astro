@@ -1,0 +1,191 @@
+---
+// src/pages/research.astro
+import Layout from '../layouts/Layout.astro';
+
+// Fill these in when the URLs exist. Empty strings are hidden automatically,
+// so no dead links reach the live site.
+const links = {
+  ssrn: '',
+  benchmarkRepo: '',
+  preregCommit: '', // link to the commit that fixed the hypotheses and the 153-query set
+};
+
+const projects = [
+  {
+    id: 'cited-but-not-clicked',
+    title: 'Cited but Not Clicked',
+    subtitle:
+      'Evidence from a cryptocurrency exchange on the value-capture gap in Generative Engine Optimization',
+    status: 'Published',
+    statusNote: 'SSRN',
+    cueClass: 'is-go',
+    summary:
+      'AI answer engines can cite a brand without sending it traffic. This paper looks at that gap using data from a crypto exchange: what being cited is worth compared with being clicked.',
+    facts: [],
+    links: [{ label: 'Read on SSRN', href: links.ssrn }],
+  },
+  {
+    id: 'geo-benchmark',
+    title: 'GEO Benchmark',
+    subtitle: 'Which retrieved sources do AI answer engines actually cite?',
+    status: 'In progress',
+    statusNote: 'Confirmation stage',
+    cueClass: 'is-standby',
+    summary:
+      'A follow-up to the paper, focused on the citation side. For each query, the benchmark records the sources an answer engine retrieves and the subset it ends up citing, then tests what separates the two.',
+    facts: [
+      'Scraper built on the Perplexity Agent API, with the first full run pushed to GitHub.',
+      'Exploratory runs used 84 queries drawn from Search Console data, competitor keyword files, and autocomplete research. Domains in the top 60 cited were labeled by type.',
+      'Hypotheses (H1 to H6b) and a 153-query confirmation set were committed before any confirmation run. Two confirmation runs are complete and the analysis script was run once as specified.',
+      'Next: a second confirmation round, run as a new round with queries from real tools (Google Autocomplete and People Also Ask) in place of drafted ones, and a gradient-boosted classifier that predicts whether a retrieved source gets cited.',
+      'Click data is planned as a later extension. The first paper covers citation only.',
+    ],
+    links: [{ label: 'Code and data on GitHub', href: links.benchmarkRepo }],
+  },
+  {
+    id: 'attribution-study',
+    title: 'Attribution Fidelity Study',
+    subtitle: 'When an answer engine cites a page, does its summary match the page?',
+    status: 'Design stage',
+    statusNote: 'Pilot planned',
+    cueClass: 'is-planned',
+    summary:
+      'A separate study of faithfulness. It compares what an answer engine says a source claims with what the source actually says, using only the source page and the engine output.',
+    facts: [
+      'Pilot on Perplexity first, then ChatGPT and Google AI Overviews once the pipeline and scoring rubric are validated.',
+      'Each summary is scored as entailed, neutral, or contradicted by the source, with severity tagged separately.',
+      'Queries come from existing public datasets, sampled across a grid of domain and intent. It is not limited to crypto and does not reuse the GEO Benchmark queries.',
+    ],
+    links: [],
+  },
+];
+
+const principles = [
+  {
+    title: 'Hypotheses first',
+    text: 'For the benchmark, hypotheses and the confirmation query set were committed before the confirmation runs, so the analysis cannot drift toward whatever looks good afterward.',
+    link: links.preregCommit ? { label: 'See the commit', href: links.preregCommit } : null,
+  },
+  {
+    title: 'Real queries',
+    text: 'Query sets come from Search Console, keyword tools, and public datasets. Drafted queries are treated as a limitation, not a default.',
+    link: null,
+  },
+  {
+    title: 'Open code',
+    text: 'Scrapers and analysis scripts live on GitHub so the runs can be repeated.',
+    link: null,
+  },
+];
+
+// Hide any link that has no URL yet.
+const withLinks = projects.map((p) => ({ ...p, links: p.links.filter((l) => l.href) }));
+---
+
+<Layout
+  title="Research — Cuemio"
+  description="Independent research on how AI answer engines retrieve, cite, and represent sources."
+  theme="light"
+>
+  <div class="max-w-3xl mx-auto px-6 md:px-10 py-20 md:py-24 font-body">
+
+    <header class="mb-16">
+      <p class="font-plex-mono text-xs uppercase tracking-widest text-[#565C63] mb-3">Research</p>
+      <h1 class="font-display text-4xl md:text-5xl font-semibold text-[#12151A] mb-5">
+        How AI answer engines choose their sources
+      </h1>
+      <p class="text-lg text-[#565C63] leading-relaxed max-w-2xl">
+        I study how AI answer engines choose, cite, and represent sources, and what that means for
+        brands that want to be found in them. The work is independent, built on real query data,
+        and set up so it can be repeated.
+      </p>
+    </header>
+
+    <section aria-labelledby="projects-heading">
+      <h2 id="projects-heading" class="sr-only">Projects</h2>
+      <ul class="list-none p-0 space-y-6">
+        {withLinks.map((p) => (
+          <li id={p.id} class="bg-white border border-[#DEE2DC] rounded-2xl p-6 md:p-8 mb-0">
+            <span class={`cue-light ${p.cueClass} font-plex-mono text-[11px] uppercase tracking-widest text-[#565C63] mb-4`}>
+              <span class="dot"></span>
+              {p.status}, {p.statusNote}
+            </span>
+            <h3 class="font-display text-2xl font-semibold text-[#12151A] mt-2 mb-1">{p.title}</h3>
+            <p class="text-[#8A9088] mb-4">{p.subtitle}</p>
+            <p class="text-[#565C63] leading-relaxed max-w-prose">{p.summary}</p>
+
+            {p.facts.length > 0 && (
+              <ul class="mt-5 list-disc pl-5 space-y-2 text-sm text-[#565C63] leading-relaxed max-w-prose">
+                {p.facts.map((f) => (
+                  <li class="mb-0">{f}</li>
+                ))}
+              </ul>
+            )}
+
+            {p.links.length > 0 && (
+              <p class="mt-6 flex flex-wrap gap-x-6 gap-y-2 mb-0">
+                {p.links.map((l) => (
+                  <a
+                    href={l.href}
+                    class="text-sm font-medium text-[#12151A] hover:text-[#3A36E0] transition-colors border-b border-[#DEE2DC] hover:border-[#3A36E0]"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {l.label} &rarr;
+                  </a>
+                ))}
+              </p>
+            )}
+          </li>
+        ))}
+      </ul>
+    </section>
+
+    <section class="mt-20" aria-labelledby="method-heading">
+      <h2 id="method-heading" class="font-display text-2xl font-semibold text-[#12151A] mb-6">
+        How I run the work
+      </h2>
+      <dl class="space-y-6 m-0">
+        {principles.map((p) => (
+          <div>
+            <dt class="font-semibold text-[#12151A]">{p.title}</dt>
+            <dd class="mt-1 ml-0 text-[#565C63] leading-relaxed max-w-prose">
+              {p.text}
+              {p.link && (
+                <>
+                  {' '}
+                  <a
+                    href={p.link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-[#3A36E0] hover:underline"
+                  >
+                    {p.link.label}
+                  </a>
+                  .
+                </>
+              )}
+            </dd>
+          </div>
+        ))}
+      </dl>
+    </section>
+
+    <section class="mt-20 p-10 bg-[#12151A] rounded-3xl text-center">
+      <h2 class="font-display text-2xl font-semibold text-white mb-3">Talk about the work</h2>
+      <p class="text-white/60 max-w-xl mx-auto leading-relaxed mb-7">
+        If you work on search, growth, or AI visibility and want to compare notes or collaborate,
+        get in touch.
+      </p>
+      <a
+        href="https://calendly.com/ayotomiwa_/30min"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-block bg-white text-[#12151A] font-medium px-7 py-3 rounded-full hover:bg-[#3A36E0] hover:text-white transition-colors"
+      >
+        Book a chat
+      </a>
+    </section>
+
+  </div>
+</Layout>

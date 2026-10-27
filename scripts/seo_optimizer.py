@@ -27,7 +27,7 @@ from google.analytics.data_v1beta.types import (
 )
 
 # google analytics configuration
-GSC_SITE_URL = 'https://www.tomintech.com/'
+GSC_SITE_URL = 'sc-domain:cuemio.com'
 GA4_PROPERTY_ID = '452739298'
 
 CONTENT_DIR = "src/content/blog"
