@@ -1,51 +1,169 @@
 ---
+// src/pages/about.astro
 import Layout from '../layouts/Layout.astro';
 
-const skills = [
-  'SEO & Content Ops', 'Automation (Python, GCP, n8n)', 'Analytics & Data',
-  'GTM Engineering Strategy', 'Web3 / DeFi',
+const focus = [
+  {
+    label: 'Marketing research',
+    copy: 'Independent studies on how search and AI answer engines choose, cite, and represent sources. Built on real query data, with hypotheses fixed before the runs.',
+    href: '/research',
+    cta: 'See the research',
+  },
+  {
+    label: 'AI growth systems',
+    copy: 'Pipelines that pull signal from scattered sources, rank it with an LLM, and hand a team something it can act on: what to publish, where to distribute, and whether it converted.',
+    href: '/#projects',
+    cta: 'See the modules',
+  },
+  {
+    label: 'Experiments and shipped products',
+    copy: 'Ideas get built small, tested in real work, and kept only if they hold up. Some become modules. Some get dropped.',
+    href: '/blog',
+    cta: 'Read the teardowns',
+  },
+];
+
+const shipped = [
+  { name: 'SEO Intelligence Bot', status: 'Live', cueClass: 'is-go', href: '/seo-intelligence-bot' },
+  { name: 'Off-Page Distribution Engine', status: 'Live', cueClass: 'is-go', href: '/off-page-distribution-engine' },
+  { name: 'L2 SEO & GEO Visibility Teardown', status: 'Live', cueClass: 'is-go', href: '/blog/l2-seo-geo-teardown' },
+  { name: 'AI-powered Reddit lead generation', status: 'Live', cueClass: 'is-go', href: 'https://github.com/Toms-x/automation-projects/tree/main/reddit-ad' },
+  { name: 'Attribution Dashboard', status: 'Beta', cueClass: 'is-standby', href: '/attribution-dashboard' },
+  { name: 'GEO Benchmark', status: 'In progress', cueClass: 'is-standby', href: '/research#geo-benchmark' },
+];
+
+const principles = [
+  {
+    title: 'Build it, then say it',
+    text: 'Modules are described as live, beta, or in progress, and that status is kept current.',
+  },
+  {
+    title: 'Evidence over opinion',
+    text: 'Claims come from data we can show. Where figures are illustrative, the page says so.',
+  },
+  {
+    title: 'Systems over one-offs',
+    text: 'If a task will repeat, it should become a pipeline instead of a checklist.',
+  },
+  {
+    title: 'Tested in real work',
+    text: 'Most of what ships here is first used on live organic growth work in crypto and fintech.',
+  },
 ];
 ---
 <Layout
-    title="About — Ayotomiwa Oladotun"
-    description="Engineer-turned-growth strategist building Cuemio, the data systems behind the marketing."
-    theme="light"
+  title="About Cuemio"
+  description="Cuemio is an early-stage startup exploring marketing research, AI growth systems, and shipping small products for crypto and fintech growth teams."
+  theme="light"
 >
-    <div class="max-w-2xl mx-auto px-6 py-20 md:py-28 font-body">
+  <div class="max-w-3xl mx-auto px-6 md:px-10 py-20 md:py-24 font-body">
 
-        <p class="font-plex-mono text-xs uppercase tracking-widest text-[#565C63] mb-6">About</p>
+    <!-- Header -->
+    <header class="mb-16">
+      <p class="font-plex-mono text-xs uppercase tracking-widest text-[#565C63] mb-3">About</p>
+      <h1 class="font-display text-4xl md:text-5xl font-semibold text-[#12151A] mb-5">
+        A small startup building growth systems and testing what works.
+      </h1>
+      <p class="text-lg text-[#565C63] leading-relaxed max-w-2xl">
+        Cuemio explores how marketing research and AI can be turned into tools that growth teams
+        use. We run experiments, publish what we find, and ship the ones that prove useful.
+        The focus today is crypto and fintech.
+      </p>
+      <div class="mt-6 cue-light is-standby font-plex-mono text-xs text-[#565C63]">
+        <span class="dot"></span>
+        Early access. Modules ship on a rolling basis.
+      </div>
+    </header>
 
-        <div class="flex items-center gap-5 mb-8">
-            <img src="/images/my pro picture.png" alt="Ayotomiwa Oladotun" class="w-16 h-16 rounded-full border border-[#DEE2DC] object-cover" />
-            <div>
-                <h1 class="font-display text-2xl font-semibold text-[#12151A]">Ayotomiwa Oladotun</h1>
-                <p class="text-[#3A36E0] font-medium">Building Cuemio</p>
-            </div>
-        </div>
+    <!-- The idea -->
+    <section class="mb-16">
+      <h2 class="font-display text-2xl font-semibold text-[#12151A] mb-4">The idea</h2>
+      <p class="text-[#565C63] leading-relaxed mb-4">
+        Most growth work still runs on instinct and manual checking. Someone notices a trend late,
+        a post goes out without tracking, and nobody can say afterwards what actually converted.
+      </p>
+      <p class="text-[#565C63] leading-relaxed">
+        Cuemio treats growth as a chain with three links: what to write, where to publish, and
+        whether it worked. Each link gets its own module, and each module is useful on its own.
+      </p>
+    </section>
 
-        <p class="text-lg text-[#565C63] leading-relaxed mb-10">
-            Trained as an engineer, spent seven years turning that into organic growth and lead generation for crypto and fintech platforms. Currently SEO Manager at YEX Exchange. Cuemio is the GTM system I built for the questions instinct can't answer: what to build, where to spend, and whether it worked.
-        </p>
-
-        <div class="flex flex-wrap gap-2 mb-10">
-            {skills.map((s) => (
-                <span class="text-xs px-3 py-1.5 bg-white text-[#565C63] rounded-full border border-[#DEE2DC]">
-                    {s}
-                </span>
-            ))}
-        </div>
-
-        <div class="flex flex-col sm:flex-row gap-3">
-            <a href="https://calendly.com/ayotomiwa_/30min" target="_blank" rel="noopener noreferrer" class="bg-[#12151A] hover:bg-[#3A36E0] text-white font-medium px-7 py-3 rounded-full transition-colors text-center">
-                Book a chat
+    <!-- What we work on -->
+    <section class="mb-16">
+      <h2 class="font-display text-2xl font-semibold text-[#12151A] mb-6">What we work on</h2>
+      <div class="space-y-4">
+        {focus.map((f) => (
+          <div class="p-6 bg-white border border-[#DEE2DC] rounded-2xl">
+            <h3 class="font-display text-lg font-semibold text-[#12151A] mb-2">{f.label}</h3>
+            <p class="text-[#565C63] leading-relaxed text-sm mb-3">{f.copy}</p>
+            <a href={f.href} class="text-sm font-medium text-[#12151A] hover:text-[#3A36E0] transition-colors border-b border-[#DEE2DC] hover:border-[#3A36E0]">
+              {f.cta} &rarr;
             </a>
-            <a href="/#projects" class="border border-[#DEE2DC] hover:border-[#12151A] text-[#12151A] font-medium px-7 py-3 rounded-full transition-colors text-center">
-                See the modules
-            </a>
-            <a href="/press" class="border border-[#DEE2DC] hover:border-[#12151A] text-[#12151A] font-medium px-7 py-3 rounded-full transition-colors text-center">
-                Read my writing
-            </a>
-        </div>
+          </div>
+        ))}
+      </div>
+    </section>
 
-    </div>
+    <!-- What has shipped -->
+    <section class="mb-16">
+      <h2 class="font-display text-2xl font-semibold text-[#12151A] mb-2">What has shipped</h2>
+      <p class="text-sm text-[#565C63] mb-6">Status is shown as it is today.</p>
+      <ul class="list-none p-0 divide-y divide-[#DEE2DC] border-y border-[#DEE2DC]">
+        {shipped.map((s) => (
+          <li class="mb-0">
+            <a href={s.href} class="flex items-center justify-between gap-4 py-4 group">
+              <span class="text-[#12151A] group-hover:text-[#3A36E0] transition-colors">{s.name}</span>
+              <span class={`cue-light ${s.cueClass} font-plex-mono text-[11px] uppercase tracking-widest text-[#565C63] shrink-0`}>
+                <span class="dot"></span>
+                {s.status}
+              </span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </section>
+
+    <!-- How we work -->
+    <section class="mb-16">
+      <h2 class="font-display text-2xl font-semibold text-[#12151A] mb-6">How we work</h2>
+      <dl class="space-y-6 m-0">
+        {principles.map((p) => (
+          <div>
+            <dt class="font-semibold text-[#12151A]">{p.title}</dt>
+            <dd class="mt-1 ml-0 text-[#565C63] leading-relaxed max-w-prose">{p.text}</dd>
+          </div>
+        ))}
+      </dl>
+    </section>
+
+    <!-- Who is behind it -->
+    <section class="mb-16">
+      <h2 class="font-display text-2xl font-semibold text-[#12151A] mb-4">Who is behind it</h2>
+      <p class="text-[#565C63] leading-relaxed"> Cuemio was started by <a href="/founder" class="text-[#12151A] underline underline-offset-2 hover:opacity-70">Ayotomiwa Oladotun</a>, a metallurgical engineer who moved into organic growth and has spent seven years in crypto and fintech marketing. He is also SEO Manager at YEX Exchange, which is where many of the modules get their first real-world test.
+      </p>
+    </section>
+
+    <!-- CTA -->
+    <section class="p-10 bg-[#12151A] rounded-3xl text-center">
+      <h2 class="font-display text-2xl font-semibold text-white mb-3">Follow along or get in touch</h2>
+      <p class="text-white/60 max-w-xl mx-auto leading-relaxed mb-7">
+        Join the waitlist to hear when new modules ship, or book a call if you want to compare
+        notes on growth, search, or AI visibility.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-3 justify-center">
+        <a href="/#cta" class="inline-block bg-white text-[#12151A] font-medium px-7 py-3 rounded-full hover:bg-[#3A36E0] hover:text-white transition-colors">
+          Join the waitlist
+        </a>
+        <a
+          href="https://calendly.com/ayotomiwa_/30min"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-block border border-white/20 text-white font-medium px-7 py-3 rounded-full hover:border-white transition-colors"
+        >
+          Book a chat
+        </a>
+      </div>
+    </section>
+
+  </div>
 </Layout>

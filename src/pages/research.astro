@@ -2,11 +2,9 @@
 // src/pages/research.astro
 import Layout from '../layouts/Layout.astro';
 
-// Fill these in when the URLs exist. Empty strings are hidden automatically,
-// so no dead links reach the live site.
 const links = {
-  ssrn: '',
-  benchmarkRepo: '',
+  ssrn: 'https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7468658',
+  benchmarkRepo: 'https://github.com/Toms-x/geo-benchmark',
   preregCommit: '', // link to the commit that fixed the hypotheses and the 153-query set
 };
 
@@ -95,49 +93,56 @@ const withLinks = projects.map((p) => ({ ...p, links: p.links.filter((l) => l.hr
         How AI answer engines choose their sources
       </h1>
       <p class="text-lg text-[#565C63] leading-relaxed max-w-2xl">
-        I study how AI answer engines choose, cite, and represent sources, and what that means for
-        brands that want to be found in them. The work is independent, built on real query data,
-        and set up so it can be repeated.
+        Independent studies examining how AI answer engines select, cite, and represent sources, and what this means for brands seeking visibility across AI-driven search. The research draws on real query data and follows a repeatable methodology.
       </p>
     </header>
 
     <section aria-labelledby="projects-heading">
       <h2 id="projects-heading" class="sr-only">Projects</h2>
       <ul class="list-none p-0 space-y-6">
-        {withLinks.map((p) => (
-          <li id={p.id} class="bg-white border border-[#DEE2DC] rounded-2xl p-6 md:p-8 mb-0">
-            <span class={`cue-light ${p.cueClass} font-plex-mono text-[11px] uppercase tracking-widest text-[#565C63] mb-4`}>
-              <span class="dot"></span>
-              {p.status}, {p.statusNote}
-            </span>
-            <h3 class="font-display text-2xl font-semibold text-[#12151A] mt-2 mb-1">{p.title}</h3>
-            <p class="text-[#8A9088] mb-4">{p.subtitle}</p>
-            <p class="text-[#565C63] leading-relaxed max-w-prose">{p.summary}</p>
+        {withLinks.map((p) => {
+          // A card with a link becomes one big link. A card without one stays a plain box.
+          const href = p.links[0]?.href;
+          const Tag = href ? 'a' : 'div';
+          const cardClass =
+            'block bg-white border border-[#DEE2DC] rounded-2xl p-6 md:p-8 transition-colors' +
+            (href
+              ? ' group cursor-pointer hover:border-[#3A36E0] focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#3A36E0]'
+              : '');
 
-            {p.facts.length > 0 && (
-              <ul class="mt-5 list-disc pl-5 space-y-2 text-sm text-[#565C63] leading-relaxed max-w-prose">
-                {p.facts.map((f) => (
-                  <li class="mb-0">{f}</li>
-                ))}
-              </ul>
-            )}
+          return (
+            <li id={p.id} class="mb-0">
+              <Tag
+                href={href}
+                target={href ? '_blank' : undefined}
+                rel={href ? 'noopener noreferrer' : undefined}
+                class={cardClass}
+              >
+                <span class={`cue-light ${p.cueClass} font-plex-mono text-[11px] uppercase tracking-widest text-[#565C63] mb-4`}>
+                  <span class="dot"></span>
+                  {p.status}, {p.statusNote}
+                </span>
+                <h3 class="font-display text-2xl font-semibold text-[#12151A] mt-2 mb-1">{p.title}</h3>
+                <p class="text-[#8A9088] mb-4">{p.subtitle}</p>
+                <p class="text-[#565C63] leading-relaxed max-w-prose">{p.summary}</p>
 
-            {p.links.length > 0 && (
-              <p class="mt-6 flex flex-wrap gap-x-6 gap-y-2 mb-0">
-                {p.links.map((l) => (
-                  <a
-                    href={l.href}
-                    class="text-sm font-medium text-[#12151A] hover:text-[#3A36E0] transition-colors border-b border-[#DEE2DC] hover:border-[#3A36E0]"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    {l.label} &rarr;
-                  </a>
-                ))}
-              </p>
-            )}
-          </li>
-        ))}
+                {p.facts.length > 0 && (
+                  <ul class="mt-5 list-disc pl-5 space-y-2 text-sm text-[#565C63] leading-relaxed max-w-prose">
+                    {p.facts.map((f) => (
+                      <li class="mb-0">{f}</li>
+                    ))}
+                  </ul>
+                )}
+
+                {href && (
+                  <span class="inline-block mt-6 text-sm font-medium text-[#12151A] border-b border-[#DEE2DC] transition-colors group-hover:text-[#3A36E0] group-hover:border-[#3A36E0]">
+                    {p.links[0].label} &rarr;
+                  </span>
+                )}
+              </Tag>
+            </li>
+          );
+        })}
       </ul>
     </section>
 
