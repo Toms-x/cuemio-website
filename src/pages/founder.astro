@@ -1,6 +1,6 @@
 ---
+// src/pages/founder.astro
 import Layout from '../layouts/Layout.astro';
-import ResearchCards from '../pages/Research.astro';
 
 const skills = [
   'SEO & Content Ops',
@@ -12,61 +12,42 @@ const skills = [
 ];
 ---
 <Layout
-    title="Founder | Ayotomiwa Oladotun"
-    description="Ayotomiwa Oladotun is the founder of Cuemio, an engineer-turned-growth strategist researching how AI answer engines use the web."
-    theme="light"
+  title="Ayotomiwa Oladotun, Founder of Cuemio"
+  description="A research-driven growth strategist who investigates AI systems, designs evaluations, and translates technical findings into actionable market insights."
+  theme="light"
 >
-    <div class="max-w-2xl mx-auto px-6 py-20 md:py-28 font-body">
+  <div class="max-w-2xl mx-auto px-6 py-20 md:py-28 font-body">
 
-        <p class="font-plex-mono text-xs uppercase tracking-widest text-[#565C63] mb-6">Founder</p>
-
-        <div class="flex items-center gap-5 mb-8">
-            <img src="/images/my pro picture.png" alt="Ayotomiwa Oladotun" class="w-16 h-16 rounded-full border border-[#DEE2DC] object-cover" />
-            <div>
-                <h1 class="font-display text-2xl font-semibold text-[#12151A]">Ayotomiwa Oladotun</h1>
-                <p class="text-[#3A36E0] font-medium">Founder, Cuemio</p>
-            </div>
-        </div>
-
-        <p class="text-lg text-[#565C63] leading-relaxed mb-8">
-            A research-driven growth strategist who investigates AI systems, designs evaluations, and translates technical findings into actionable market insights.
-        </p>
-
-        <div class="space-y-5 text-[#12151A] leading-relaxed mb-10">
-            <p>
-                I'm an engineer by training who moved into growth. Over seven years I've worked on search, content and community for financial platforms, including decentralized finance products.
-            </p>
-            <p>
-                I'm building Cuemio, a growth engineering startup that turns scattered market signals into decisions a team can act on.
-            </p>
-            <p>
-                I also research how AI answer engines use the web. My published paper, <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7468658" target="_blank" rel="noopener noreferrer" class="underline decoration-[#DEE2DC] underline-offset-4 hover:decoration-[#3A36E0]"><em>Cited but Not Clicked</em></a>, measures what Google AI Overviews did to click-through on a financial platform's pages. I'm now running a benchmark of which sources these engines retrieve versus which they cite, with hypotheses committed before each run.
-            </p>
-        </div>
-
-        <div class="flex flex-wrap gap-2 mb-10">
-            {skills.map((s) => (
-                <span class="text-xs px-3 py-1.5 bg-white text-[#565C63] rounded-full border border-[#DEE2DC]">
-                    {s}
-                </span>
-            ))}
-        </div>
-
-        <ResearchCards />
-
-        <div class="flex flex-col sm:flex-row gap-3">
-            <a href="https://calendly.com/ayotomiwa_/30min" target="_blank" rel="noopener noreferrer" class="bg-[#12151A] hover:bg-[#3A36E0] text-white font-medium px-7 py-3 rounded-full transition-colors text-center">
-                Book a chat
-            </a>
-            <a href="/#projects" class="border border-[#DEE2DC] hover:border-[#12151A] text-[#12151A] font-medium px-7 py-3 rounded-full transition-colors text-center">
-                See the modules
-            </a>
-            <a href="/press" class="border border-[#DEE2DC] hover:border-[#12151A] text-[#12151A] font-medium px-7 py-3 rounded-full transition-colors text-center">
-                Read my writing
-            </a>
-        </div>
-
-        <a href="/about" class="inline-block mt-8 text-sm text-[#565C63] hover:text-[#12151A] transition-colors">Back to about Cuemio</a>
-
+    <div class="flex items-center gap-5 mb-8">
+      <img src="/images/my pro picture.png" alt="Ayotomiwa Oladotun" class="w-16 h-16 rounded-full border border-[#DEE2DC] object-cover" />
+      <h1 class="font-display text-2xl font-semibold text-[#12151A]">Ayotomiwa Oladotun</h1>
     </div>
+
+    <p class="text-lg text-[#12151A] leading-relaxed mb-6">
+      A research-driven growth strategist who investigates AI systems, designs evaluations, and translates technical findings into actionable market insights.
+    </p>
+
+    <div class="space-y-4 text-[#565C63] leading-relaxed mb-10">
+      <p>
+        I'm an engineer by training who moved into growth. Over seven years I've worked on search, content and community for financial platforms, including decentralized finance products.
+      </p>
+      <p>
+        I'm building Cuemio, a growth engineering startup that turns scattered market signals into decisions a team can act on.
+      </p>
+      <p>
+        I also research how AI answer engines use the web. My published paper,
+        <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7468658" target="_blank" rel="noopener noreferrer" class="text-[#3A36E0] hover:underline">Cited but Not Clicked</a>,
+        measures what Google AI Overviews did to click-through on a financial platform's pages. I'm now running a benchmark of which sources these engines retrieve versus which they cite, with hypotheses committed before each run.
+      </p>
+    </div>
+
+    <div class="flex flex-wrap gap-2">
+      {skills.map((s) => (
+        <span class="text-xs px-3 py-1.5 bg-white text-[#565C63] rounded-full border border-[#DEE2DC]">
+          {s}
+        </span>
+      ))}
+    </div>
+
+  </div>
 </Layout>
